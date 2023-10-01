@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W8</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="_container header__container">
+        <div class="header__wrapper">
+          <a class="logo-link header__logo"
+            ><img src="assets/img/logo.svg" alt="logo" draggable="false"
+          /></a>
+          <nav class="menu header__menu">
+            <ul class="menu-list">
+              <li class="menu-list__item">
+                <a class="menu__link anchor" href="#" data-goto=".types"
+                  >підбір авто</a
+                >
+              </li>
+              <li class="menu-list__item">
+                <a class="menu__link anchor" href="#" data-goto=".catalog"
+                  >актуальні лоти</a
+                >
+              </li>
+              <li class="menu-list__item">
+                <a
+                  class="menu__link anchor"
+                  href="#"
+                  data-goto=".feedback-customers"
+                  >відео відгуки</a
+                >
+              </li>
+              <li class="menu-list__item">
+                <a
+                  class="menu__link anchor"
+                  href="#"
+                  data-goto=".feedback-bloggers"
+                  >наша команда</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <a class="header__call desktop" href="tel:+380674448820"
+              >+380 (67) 444 88 20</a
+            ><a class="header__call tablet" href="tel:+380674448820">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20.6789 16.704C19.2291 15.464 17.7577 14.7128 16.3257 15.951L15.4706 16.6993C14.8449 17.2425 13.6817 19.7807 9.1842 14.607C4.68766 9.43986 7.36348 8.63533 7.99006 8.0968L8.84984 7.34753C10.2744 6.10655 9.73679 4.54433 8.70936 2.93621L8.08934 1.96216C7.05722 0.35779 5.93332 -0.695869 4.50502 0.543234L3.73328 1.21758C3.10202 1.67744 1.33749 3.17223 0.909472 6.01196C0.39435 9.41925 2.01933 13.3211 5.74225 17.6022C9.4605 21.8852 13.101 24.0365 16.5495 23.9991C19.4155 23.9682 21.1463 22.4303 21.6876 21.8712L22.4622 21.1959C23.8867 19.9577 23.0016 18.6971 21.5509 17.4542L20.6789 16.704Z"
+                  fill="currentColor"
+                /></svg></a
+            ><button
+              class="menu-burger popup-open"
+              data-popup="_popup-menu"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="popup popup-video info-video__popup"
+        data-popupname="_popup-info-video"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper">
+            <button class="popup__close">
+              <img src="assets/img/popup-close.svg" alt="close" />
+            </button>
+            <div class="popup__content">
+              <div class="popup-video__media">
+                <video
+                  class="video"
+                  disablePictureInPicture
+                  preload="metadata"
+                  playsinline
+                  controls
+                >
+                  <source data-src="assets/video/video.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="popup popup-menu menu__popup"
+        data-popupname="_popup-menu"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper">
+            <button class="popup__close hidden">
+              <img src="assets/img/popup-close.svg" alt="close" />
+            </button>
+            <div class="popup__content">
+              <div class="modal-menu__header">
+                <a class="logo-link modal-menu__logo" href="#">
+                  <img
+                    src="assets/img/logo.svg"
+                    alt="logo"
+                    draggable="false" /></a
+                ><button class="popup__close">
+                  <img src="assets/img/popup-close-black.svg" alt="close" />
+                </button>
+              </div>
+              <div class="modal-menu__main">
+                <nav class="menu">
+                  <ul class="menu-list">
+                    <li class="menu-list__item">
+                      <a class="menu__link anchor" href="#" data-goto=".types"
+                        >підбір авто</a
+                      >
+                    </li>
+                    <li class="menu-list__item">
+                      <a class="menu__link anchor" href="#" data-goto=".catalog"
+                        >актуальні лоти</a
+                      >
+                    </li>
+                    <li class="menu-list__item">
+                      <a
+                        class="menu__link anchor"
+                        href="#"
+                        data-goto=".feedback-customers"
+                        >відео відгуки</a
+                      >
+                    </li>
+                    <li class="menu-list__item">
+                      <a
+                        class="menu__link anchor"
+                        href="#"
+                        data-goto=".feedback-bloggers"
+                        >наша команда</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="modal-menu__footer">
+                <p class="modal-menu__description">
+                  безкоштовна <br />
+                  консультація
+                </p>
+                <a class="header__call" href="tel:+380930558669"
+                  >+38 093 055 86 69</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="popup popup-feedback thanks__popup fullscreen"
+        data-popupname="_popup-thanks"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper">
+            <button class="popup__close hidden">
+              <img src="assets/img/popup-close.svg" alt="close" />
+            </button>
+            <div class="popup__content">
+              <div class="thanks-popup">
+                <div class="thanks-popup-bg">
+                  <div class="thanks-popup-bg__back">
+                    <div class="thanks-popup-bg__back__container">
+                      <img
+                        class="desktop"
+                        src="assets/img/popup/thanks-bg.png"
+                        alt="bg"
+                      /><img
+                        class="mobile"
+                        src="assets/img/popup/thanks-bg-mobile.png"
+                        alt="bg"
+                      />
+                    </div>
+                  </div>
+                  <div class="thanks-popup-bg__img">
+                    <div class="thanks-popup-bg__img__container">
+                      <img src="assets/img/popup/thanks-car.png" alt="bg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="thanks-popup__content">
+                  <div class="thanks-popup__title">
+                    <span>Дякуюємо!</span
+                    ><span>Очікуйте на дзвінок експерта компанії</span
+                    ><span>W8 Shipping!</span>
+                  </div>
+                  <button
+                    class="thanks-popup__button button-filled popup__button"
+                  >
+                    <span>Зв'яжіться зі мною</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="popup popup-feedback error__popup"
+        data-popupname="_popup-error"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper">
+            <button class="popup__close">
+              <img src="assets/img/popup-close.svg" alt="close" />
+            </button>
+            <div class="popup__content">
+              <div class="feedback-popup">
+                <div class="feedback-popup__label">
+                  <img src="assets/img/error.svg" alt="error" />
+                </div>
+                <p class="feedback-popup__title">
+                  Вибачте, сталася помилка. Спробуйте пізніше
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="popup popup-form form__popup fullscreen"
+        data-popupname="_popup-form"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="popup__overlay"></div>
+        <div class="popup__additional"></div>
+        <div class="popup__scroll">
+          <div class="popup__wrapper">
+            <button class="popup__close hidden">
+              <img src="assets/img/popup-close.svg" alt="close" />
+            </button>
+            <div class="popup__content">
+              <div class="action-popup">
+                <form
+                  class="form hidden action-popup__form"
+                  id="form-popup"
+                  action="post"
+                >
+                  <input id="popup-type" type="text" name="type" /><input
+                    id="popup-term"
+                    type="text"
+                    name="term"
+                  /><input id="popup-budget" type="text" name="budget" /><input
+                    id="popup-name"
+                    type="text"
+                    name="name"
+                  /><input
+                    id="popup-telephone"
+                    type="tel"
+                    name="telephone"
+                  /><input id="form-popup-submit" type="submit" />
+                </form>
+                <div class="action-popup__content">
+                  <div class="action-popup-media resize-text-container">
+                    <div class="action-popup-media__text">hatchback</div>
+                    <div class="action-popup-media__img">
+                      <img
+                        src="assets/img/types-white/car-1.png"
+                        alt="hatchback"
+                      />
+                    </div>
+                  </div>
+                  <div class="action-popup-slider swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>КОЛИ ВИ БАЖАЄТЕ</span>
+                            <span>ПРИДБАТИ</span>
+                            <span>АВТО?</span>
+                          </p>
+                          <div class="action-popup-list">
+                            <label class="action-popup-list__item" for="term-1">
+                              <input
+                                id="term-1"
+                                type="radio"
+                                name="term"
+                                value="найближчим часом"
+                                checked
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>найближчим часом</p>
+                              </div> </label
+                            ><label
+                              class="action-popup-list__item"
+                              for="term-2"
+                            >
+                              <input
+                                id="term-2"
+                                type="radio"
+                                name="term"
+                                value="В наступні 3 місяці"
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>В наступні 3 місяці</p>
+                              </div> </label
+                            ><label
+                              class="action-popup-list__item"
+                              for="term-3"
+                            >
+                              <input
+                                id="term-3"
+                                type="radio"
+                                name="term"
+                                value="цього року"
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>цього року</p>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item"></div>
+                            <div class="action-popup-steps__item"></div>
+                          </div>
+                          <button
+                            class="action-popup__button button-filled"
+                            data-action="next-step"
+                          >
+                            <span>до наступного кроку</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>ЯКИЙ</span>
+                            <span>БЮДЖЕТ</span>
+                            <span>НА АВТО?</span>
+                          </p>
+                          <div class="action-popup-list">
+                            <label
+                              class="action-popup-list__item"
+                              for="budget-1"
+                            >
+                              <input
+                                id="budget-1"
+                                type="radio"
+                                name="budget"
+                                value="до 10 000$"
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>до 10 000$</p>
+                              </div> </label
+                            ><label
+                              class="action-popup-list__item"
+                              for="budget-2"
+                            >
+                              <input
+                                id="budget-2"
+                                type="radio"
+                                name="budget"
+                                value="11 000$ - 20 000$"
+                                checked
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>11 000$ - 20 000$</p>
+                              </div> </label
+                            ><label
+                              class="action-popup-list__item"
+                              for="budget-3"
+                            >
+                              <input
+                                id="budget-3"
+                                type="radio"
+                                name="budget"
+                                value="21 000$ +"
+                              />
+                              <div class="action-popup-list__item__inner">
+                                <p>21 000$ +</p>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item"></div>
+                          </div>
+                          <button
+                            class="action-popup__button button-filled"
+                            data-action="next-step"
+                          >
+                            <span>до наступного кроку</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="action-popup__item">
+                          <p class="action-popup__title">
+                            <span>ОСТАННІЙ</span>
+                            <span></span>
+                            <span>крок</span>
+                          </p>
+                          <p class="action-popup__subtitle">
+                            Залиште заявку, і наш експерт підбере для вас
+                            вигідне авто із США
+                          </p>
+                          <div class="action-popup-last">
+                            <input
+                              class="action-popup-last__input"
+                              id="action-popup-last__name"
+                              type="text"
+                              name="name"
+                              placeholder="Ім'я*"
+                            /><input
+                              class="action-popup-last__input"
+                              id="action-popup-last__telephone"
+                              type="tel"
+                              name="telephone"
+                              placeholder="+ 380 (00) 000 00 00"
+                            />
+                          </div>
+                          <div class="action-popup-steps">
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                            <div class="action-popup-steps__item active"></div>
+                          </div>
+                          <label
+                            class="locked action-popup__button button-filled"
+                            for="form-popup-submit"
+                            data-action="submit"
+                            ><span>Зв'яжіться зі мною</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="banner" data-animate="clip-path">
+      <div class="banner-bg">
+        <div class="banner-bg__back">
+          <div class="banner-bg__back__container">
+            <img src="assets/img/banner-bg-back.jpg" alt="banner-back" />
+          </div>
+        </div>
+        <div class="banner-bg__img">
+          <div class="banner-bg__img__container">
+            <img src="assets/img/banner-bg-front.png" alt="banner-front" />
+          </div>
+        </div>
+      </div>
+      <div class="_container banner__container">
+        <div class="banner__wrapper">
+          <div class="banner__header">
+            <p class="banner__phrase medium desktop left">
+              купимо <br />та доставимо <br />“під ключ”
+            </p>
+            <p class="banner__phrase small right">
+              Американська <br />компанія з українським <br />характером
+            </p>
+          </div>
+          <div class="banner__main">
+            <p class="banner__phrase medium mobile">
+              купимо <br />та доставимо <br />“під ключ”
+            </p>
+            <h1 class="banner__title">вигідне <br />авто з США</h1>
+            <div class="banner-steps">
+              <div class="banner-steps__container">
+                <div class="banner-steps__item left">
+                  <p><span>Вкажіть</span> бажаний автомобіль</p>
+                </div>
+                <div class="banner-steps__item right">
+                  <p><span>Все інше</span> зробить W8shipping</p>
+                </div>
+              </div>
+            </div>
+            <div class="banner__buttons">
+              <a
+                class="banner__button button-empty anchor"
+                href="#"
+                data-goto=".types"
+              >
+                <span>Обрати бажане авто</span></a
+              ><a
+                class="banner__button button-filled anchor"
+                href="#"
+                data-goto=".types"
+              >
+                <span>отримати підбір авто</span></a
+              >
+            </div>
+          </div>
+          <div class="banner__footer">
+            <ul class="socials banner__socials">
+              <li>
+                <a
+                  class="socials__link"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.8842 7.3466C10.5953 7.30404 10.3007 7.3629 10.0494 7.51338H10.0277C9.44468 7.85953 8.91922 8.29536 8.4715 8.80829C8.09839 9.24412 7.8963 9.68467 7.84344 10.1095C7.81235 10.3612 7.83411 10.6161 7.90718 10.8569L7.93516 10.8726C8.3549 12.1203 8.90212 13.3208 9.5706 14.4505C10.4325 16.0372 11.4933 17.5048 12.7264 18.8167L12.7637 18.8702L12.8228 18.9142L12.8586 18.9567L12.9021 18.9945C14.2029 20.2463 15.6563 21.325 17.227 22.2042C19.0226 23.1939 20.1123 23.6612 20.7668 23.8563V23.8657C20.958 23.9255 21.1321 23.9522 21.3078 23.9522C21.8652 23.9106 22.3928 23.6812 22.8065 23.3009C23.3117 22.8477 23.7392 22.3143 24.0719 21.7212V21.7102C24.3844 21.1123 24.2787 20.549 23.8278 20.1667C22.9223 19.3658 21.9431 18.6546 20.9036 18.0426C20.2072 17.6602 19.4998 17.8915 19.2138 18.2786L18.6028 19.059C18.2888 19.446 17.7198 19.3925 17.7198 19.3925L17.7043 19.402C13.4587 18.3053 12.3253 13.9549 12.3253 13.9549C12.3253 13.9549 12.2725 13.3633 12.6658 13.0612L13.4307 12.4381C13.7976 12.136 14.0525 11.4217 13.6592 10.7168C13.0585 9.66384 12.3571 8.67309 11.5651 7.75883C11.3924 7.54366 11.1502 7.39712 10.8811 7.34503L10.8842 7.3466ZM18.0587 5.45537C17.8526 5.45537 17.6548 5.53826 17.5091 5.68579C17.3633 5.83333 17.2814 6.03343 17.2814 6.24207C17.2814 6.45072 17.3633 6.65082 17.5091 6.79835C17.6548 6.94589 17.8526 7.02877 18.0587 7.02877C20.0237 7.02877 21.656 7.67859 22.9479 8.92472C23.6117 9.606 24.1294 10.4132 24.4683 11.2974C24.8088 12.1832 24.9642 13.1288 24.9238 14.076C24.9152 14.2847 24.9887 14.4883 25.1284 14.642C25.268 14.7957 25.4623 14.887 25.6685 14.8958C25.8746 14.9045 26.0758 14.83 26.2277 14.6887C26.3796 14.5474 26.4698 14.3508 26.4784 14.1421C26.5266 12.977 26.3355 11.8144 25.9172 10.7278C25.4971 9.63611 24.86 8.64327 24.0455 7.81075L24.0299 7.79502C22.4271 6.24522 20.3999 5.45537 18.0587 5.45537Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M18.0043 8.04204C17.7981 8.04204 17.6004 8.12493 17.4547 8.27246C17.3089 8.42 17.227 8.6201 17.227 8.82874C17.227 9.03739 17.3089 9.23749 17.4547 9.38502C17.6004 9.53256 17.7981 9.61544 18.0043 9.61544H18.0307C19.4485 9.71771 20.4808 10.196 21.2037 10.9812C21.9452 11.7899 22.3292 12.7953 22.2997 14.0383C22.2949 14.2469 22.3723 14.4489 22.5147 14.5998C22.6571 14.7508 22.8529 14.8383 23.0591 14.8431C23.2652 14.8479 23.4648 14.7696 23.6139 14.6254C23.7631 14.4813 23.8495 14.2831 23.8543 14.0745C23.8916 12.4428 23.3723 11.0346 22.3432 9.91124V9.90809C21.2907 8.76581 19.8465 8.16162 18.1085 8.04362L18.082 8.04047L18.0043 8.04204Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M17.9748 10.6775C17.8707 10.6682 17.7659 10.6802 17.6666 10.7128C17.5673 10.7454 17.4754 10.798 17.3966 10.8673C17.3178 10.9366 17.2536 11.0213 17.2078 11.1163C17.162 11.2113 17.1356 11.3147 17.1302 11.4202C17.1248 11.5258 17.1404 11.6313 17.1762 11.7306C17.2119 11.8299 17.2671 11.9209 17.3384 11.9981C17.4097 12.0754 17.4956 12.1373 17.5911 12.1802C17.6865 12.2231 17.7895 12.246 17.8939 12.2477C18.5437 12.2824 18.9588 12.4806 19.22 12.7465C19.4827 13.014 19.6786 13.4435 19.7144 14.1154C19.7163 14.2209 19.7392 14.325 19.7817 14.4215C19.8243 14.5179 19.8856 14.6046 19.9619 14.6766C20.0383 14.7485 20.1282 14.8042 20.2263 14.8402C20.3243 14.8762 20.4286 14.8919 20.5327 14.8863C20.6369 14.8807 20.7389 14.854 20.8327 14.8076C20.9264 14.7613 21.01 14.6963 21.0784 14.6166C21.1468 14.5368 21.1987 14.444 21.2309 14.3436C21.2631 14.2431 21.275 14.1372 21.2658 14.032C21.2161 13.0879 20.9238 12.254 20.3253 11.6404C19.7237 11.0268 18.9044 10.7278 17.9748 10.6775Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.48821 1.33936C14.435 0.220212 19.565 0.220212 24.5118 1.33936L25.0389 1.45737C26.4849 1.78456 27.8131 2.51112 28.8757 3.55632C29.9383 4.60152 30.6938 5.92443 31.0583 7.37807C32.3139 12.386 32.3139 17.6321 31.0583 22.64C30.6938 24.0937 29.9383 25.4166 28.8757 26.4618C27.8131 27.507 26.4849 28.2335 25.0389 28.5607L24.5103 28.6787C21.412 29.38 18.2328 29.6442 15.063 29.4639L10.9386 33.1991C10.7832 33.34 10.5931 33.4361 10.3885 33.4773C10.1838 33.5185 9.97189 33.5034 9.77495 33.4335C9.57801 33.3635 9.40322 33.2414 9.26883 33.0798C9.13445 32.9182 9.04538 32.723 9.01094 32.5147L8.32848 28.3892C7.01979 27.9771 5.8374 27.2322 4.89432 26.2256C3.95124 25.2191 3.27898 23.9845 2.94179 22.64C1.68607 17.6321 1.68607 12.386 2.94179 7.37807C3.30622 5.92443 4.06172 4.60152 5.12435 3.55632C6.18697 2.51112 7.51511 1.78456 8.9612 1.45737L9.48821 1.33936ZM24.0035 3.64125C19.3914 2.59778 14.6086 2.59778 9.99656 3.64125L9.468 3.76082C8.44308 3.99315 7.50184 4.50843 6.74881 5.24947C5.99577 5.9905 5.46041 6.92827 5.20218 7.95865C4.042 12.5856 4.042 17.4325 5.20218 22.0594C5.46054 23.09 5.99613 24.0279 6.74946 24.769C7.50278 25.51 8.44435 26.0252 9.46955 26.2573L9.60946 26.2887C9.8358 26.34 10.0419 26.4584 10.2014 26.6288C10.3609 26.7992 10.4666 27.0139 10.5049 27.2454L10.962 30.0114L13.8722 27.376C13.9884 27.2704 14.1244 27.1896 14.272 27.1382C14.4197 27.0868 14.5761 27.066 14.7319 27.077C17.8396 27.3001 20.9629 27.0643 24.0035 26.3769L24.5305 26.2573C25.5557 26.0252 26.4973 25.51 27.2506 24.769C28.0039 24.0279 28.5395 23.09 28.7979 22.0594C29.9576 17.4337 29.9576 12.586 28.7979 7.95865C28.5395 6.92807 28.0039 5.99016 27.2506 5.24911C26.4973 4.50806 25.5557 3.99289 24.5305 3.76082L24.0035 3.64125Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="socials__link"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="17"
+                      cy="17"
+                      r="15"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M23.1366 10.0001C23.267 9.99755 23.5553 10.03 23.7432 10.1816C23.868 10.2893 23.9476 10.4397 23.9662 10.6029C23.9871 10.7235 24.0132 10.9996 23.9923 11.2148C23.7575 13.6753 22.7374 19.6436 22.2182 22.3984C21.9991 23.5651 21.5673 23.9553 21.1486 23.9929C20.2407 24.0771 19.5506 23.3966 18.6701 22.8236C17.2925 21.9252 16.5138 21.3665 15.1767 20.4902C13.6309 19.479 14.6327 18.9216 15.5132 18.0141C15.7441 17.7756 19.7489 14.1549 19.8271 13.8269C19.8363 13.7855 19.8454 13.6325 19.7541 13.5521C19.6628 13.4717 19.5271 13.499 19.4293 13.521C19.291 13.5521 17.0903 14.9988 12.8273 17.8573C12.2012 18.2851 11.6363 18.4925 11.1289 18.4795C10.5706 18.4692 9.49567 18.1671 8.69603 17.9091C7.71506 17.5915 6.93629 17.4243 7.00412 16.8863C7.03934 16.6063 7.42807 16.3198 8.16902 16.0268C12.7321 14.0512 15.7741 12.7484 17.2978 12.1197C21.6443 10.3229 22.5483 10.0105 23.1366 10.0001Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="socials__link"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.2224 28.561C11.1664 28.145 12.2224 28.0666 13.2112 28.3386C14.4432 28.6746 15.7152 28.8442 17 28.841C24.336 28.841 29.8 23.5816 29.8 16.5206C29.8 9.45951 24.336 4.20012 17 4.20012C9.664 4.20012 4.2 9.45951 4.2 16.5206C4.2 20.1527 5.6336 23.356 8.1456 25.6025C8.60201 26.0068 8.9711 26.5 9.23026 27.0519C9.48942 27.6038 9.6332 28.2028 9.6528 28.8122L10.2224 28.561ZM17 1C26.0128 1 33 7.60344 33 16.5206C33 25.4377 26.0128 32.0411 17 32.0411C15.4354 32.0452 13.8774 31.8385 12.368 31.4267C12.0845 31.3488 11.7828 31.3708 11.5136 31.4891L8.3376 32.8908C8.14581 32.9755 7.93613 33.0119 7.727 32.9966C7.51787 32.9813 7.31569 32.9149 7.13824 32.8032C6.96079 32.6915 6.8135 32.5379 6.70933 32.3559C6.60515 32.1739 6.54728 31.9691 6.5408 31.7595L6.4544 28.9114C6.44843 28.7381 6.40719 28.5679 6.33318 28.411C6.25918 28.2542 6.15398 28.1142 6.024 27.9994C2.912 25.2153 1 21.1863 1 16.5206C1 7.60344 7.9856 1 17 1ZM7.392 21.0599L12.0912 13.6037C12.268 13.3229 12.5011 13.0819 12.7757 12.8958C13.0504 12.7097 13.3606 12.5826 13.6869 12.5225C14.0131 12.4623 14.3483 12.4705 14.6713 12.5464C14.9942 12.6223 15.2979 12.7644 15.5632 12.9636L19.3008 15.7637C19.4674 15.8895 19.6705 15.9575 19.8792 15.9575C20.0879 15.9575 20.291 15.8895 20.4576 15.7637L25.5056 11.93C26.1792 11.4196 27.0592 12.226 26.608 12.9428L21.9072 20.3991C21.7304 20.6794 21.4974 20.92 21.2231 21.1057C20.9487 21.2915 20.6388 21.4185 20.3129 21.4786C19.9871 21.5387 19.6523 21.5307 19.3297 21.4551C19.007 21.3795 18.7036 21.2378 18.4384 21.0391L14.6992 18.239C14.5326 18.1133 14.3295 18.0452 14.1208 18.0452C13.9121 18.0452 13.709 18.1133 13.5424 18.239L8.4944 22.0712C7.8208 22.5816 6.9408 21.7768 7.392 21.0599Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <button class="banner__down">
+              <svg
+                width="54"
+                height="54"
+                viewBox="0 0 54 54"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="27"
+                  cy="27"
+                  r="26"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M27 14L27 39.5M37 30L27 40L17 30"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="types first">
+      <div class="_container">
+        <div class="types__wrapper">
+          <button
+            class="button-filled types__button mobile popup-open"
+            data-popup="_popup-form"
+          >
+            <span>до наступного кроку</span>
+          </button>
+          <div class="types-slider resize-text-container swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">sedan</p>
+                  <div class="types-slider__img">
+                    <img src="assets/img/types-white/car-1.png" alt="sedan" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">wagon</p>
+                  <div class="types-slider__img">
+                    <img src="assets/img/types-white/car-2.png" alt="wagon" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">hatchback</p>
+                  <div class="types-slider__img">
+                    <img
+                      src="assets/img/types-white/car-3.png"
+                      alt="hatchback"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">crossover</p>
+                  <div class="types-slider__img">
+                    <img
+                      src="assets/img/types-white/car-4.png"
+                      alt="crossover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="types__main">
+            <h2 class="types__title">
+              <span>який</span><span>тип кузова</span><span>розглядаєте?</span>
+            </h2>
+            <ul class="types-list swipe-to-container">
+              <li>
+                <button class="types-list__button swipe-to-button active">
+                  Седан
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  універсал
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  хетчбек
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  кросовер
+                </button>
+              </li>
+            </ul>
+            <button
+              class="button-filled types__button desktop popup-open"
+              data-popup="_popup-form"
+            >
+              <span>до наступного кроку</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info">
+      <div class="_container">
+        <div class="info__wrapper">
+          <div class="info__main">
+            <div class="info__content">
+              <div class="info__header">
+                <h2 class="info__title">18 років</h2>
+                <p class="info__subtitle">
+                  <span>досвіду</span> в підборі та купівлі авто в США
+                  гарантують нашу експертизу
+                </p>
+              </div>
+              <button
+                class="info-media__content mobile popup-open"
+                data-popup="_popup-info-video"
+              >
+                <span class="info-media__label"
+                  ><svg
+                    width="200"
+                    height="200"
+                    viewBox="0 0 200 200"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="99"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    /></svg></span
+                ><span class="info-media__img"
+                  ><span class="info-media__img__container"
+                    ><img
+                      src="assets/img/info.jpg"
+                      alt="info-video-preview" /></span
+                ></span>
+              </button>
+              <ul class="info-accordion accordion">
+                <li class="accordion__item">
+                  <button class="accordion__summary">
+                    <span class="accordion__title">інтереси клієнта</span
+                    ><span class="accordion__label"></span>
+                  </button>
+                  <div class="accordion__details">
+                    <p class="accordion__description">
+                      Інтереси клієнта для нас першочергові та незмінні впродовж
+                      всього шляху авто від США до України.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <button class="accordion__summary">
+                    <span class="accordion__title">спеціалізація</span
+                    ><span class="accordion__label"></span>
+                  </button>
+                  <div class="accordion__details">
+                    <p class="accordion__description">
+                      Спеціалізуємось виключно на автомобільному ринку США. Ми
+                      досконально розбираємось в купівлі та доставці
+                      американських машин.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <button class="accordion__summary">
+                    <span class="accordion__title">Логістика</span
+                    ><span class="accordion__label"></span>
+                  </button>
+                  <div class="accordion__details">
+                    <p class="accordion__description">
+                      Оптимізована під воєнний час логістика з США в Україну.
+                      Налагоджені шляхи через європейськи порти.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <button class="accordion__summary">
+                    <span class="accordion__title">система Супроводу</span
+                    ><span class="accordion__label"></span>
+                  </button>
+                  <div class="accordion__details">
+                    <p class="accordion__description">
+                      Розвинена система супроводу клієнта. Ми знаходимо рішення
+                      24/7.
+                    </p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <button class="accordion__summary">
+                    <span class="accordion__title">Надійність</span
+                    ><span class="accordion__label"></span>
+                  </button>
+                  <div class="accordion__details">
+                    <p class="accordion__description">
+                      Випробувана повномасштабним вторгненням Росії в Україну.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="info-media">
+              <button
+                class="info-media__content desktop popup-open"
+                data-popup="_popup-info-video"
+              >
+                <span class="info-media__label"
+                  ><svg
+                    width="200"
+                    height="200"
+                    viewBox="0 0 200 200"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="99"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    /></svg></span
+                ><span class="info-media__img"
+                  ><span class="info-media__img__container"
+                    ><img
+                      src="assets/img/info.jpg"
+                      alt="info-video-preview"
+                      loading="lazy" /></span
+                ></span>
+              </button>
+            </div>
+          </div>
+          <div class="info__footer">
+            <a
+              class="info__button button-empty anchor"
+              href="#"
+              data-goto=".types.dark"
+            >
+              <span>безкоштовний підбір авто</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback feedback-customers">
+      <div class="_container">
+        <div class="feedback__wrapper">
+          <div class="feedback__header">
+            <h2 class="feedback__title">
+              <span>кожен</span><span>2-й покупець</span
+              ><span>рекомендує нас</span>
+            </h2>
+            <p class="feedback__subtitle">друзям <br />чи родичам</p>
+          </div>
+          <div class="feedback__main">
+            <div class="feedback-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-1.jpg"
+                          alt="feedback-preview-1"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-2.jpg"
+                          alt="feedback-preview-2"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-3.jpg"
+                          alt="feedback-preview-3"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-slider__bottom">
+              <div class="feedback-slider-controls">
+                <button class="feedback-slider-prev">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M34.9412 17.9705H1.00004M1.00004 17.9705L17.2918 34.2622M1.00004 17.9705L17.2918 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg></button
+                ><button class="feedback-slider-next">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 17.9705H34.9411M34.9411 17.9705L18.6494 34.2622M34.9411 17.9705L18.6494 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="feedback-slider-pagination"></div>
+            </div>
+          </div>
+          <div class="feedback-footer">
+            <div class="feedback-footer__text">
+              <p class="feedback-footer__title">І це неймовірно нас мотивує</p>
+              <p class="feedback-footer__description">
+                Більше 12 000 українцям W8shipping привезли автомобіль “під
+                ключ”, який вони успішно експлуатують, або вигідно продали.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div class="contact-bg">
+        <div class="contact-bg__container">
+          <img
+            src="assets/img/contact-bg.png"
+            alt="contact-bg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="_container contact__container">
+        <div class="contact__wrapper">
+          <div class="contact__content">
+            <div class="contact__header">
+              <h2 class="contact__title">
+                <span>дізнайтесь</span><span>як отримати вигоду</span
+                ><span>на авто до 40%</span>
+              </h2>
+              <a class="contact__link" href="tel:+380674448820"
+                >+380 (67) 444 88 20</a
+              >
+            </div>
+            <div class="contact__main">
+              <p class="contact__description">
+                Або <span>залиште</span> <br />
+                <span>свій номер</span> телефону, <br />
+                і ми вам зателефонуємо
+              </p>
+              <form class="form contact__form" id="form-contact" action="post">
+                <div>
+                  <label for="popup-telephone">
+                    <input
+                      id="contact-telephone"
+                      type="tel"
+                      name="telephone"
+                      placeholder="+ 380 (00) 000 00 00"
+                    /><span class="wpcf7-not-valid-tip"
+                      >Невірний формат</span
+                    ></label
+                  >
+                </div>
+                <p><button type="submit">Відправити</button></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback feedback-bloggers">
+      <div class="_container">
+        <div class="feedback__wrapper">
+          <div class="feedback__header">
+            <!--h2.feedback__titlespan кожен
+span 2-й покупець
+span рекомендує нас-->
+            <h2 class="feedback__title">
+              <span>нам</span><span>довіряють</span><span>топ блогери:</span>
+            </h2>
+            <div class="feedback-socials">
+              <a
+                class="feedback-socials__link small"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg
+                  width="89"
+                  height="36"
+                  viewBox="0 0 89 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.8334 5.84782L11.8467 5.78598L11.882 5.52537L10.2477 5.51654C8.7724 5.50771 8.31965 5.51654 8.27989 5.55408C8.26002 5.57175 7.74985 7.50864 6.84214 11.0158C6.40927 12.6899 6.04486 14.026 6.03161 13.9863C6.01835 13.9465 5.50156 12.0361 4.87875 9.74146C4.50586 8.33847 4.12009 6.93894 3.72148 5.54304C3.69939 5.52096 1.72055 5.51212 0.117154 5.52537C-0.114742 5.52758 -0.245046 5.07263 2.18876 12.8113C2.52446 13.8825 3.03021 15.3997 3.30848 16.1815C3.63093 17.0826 3.86062 17.7805 4.01742 18.3614C4.2957 19.4678 4.30453 20.1613 4.2449 20.9719C4.17423 21.9061 4.1654 28.5096 4.23386 28.62C4.28686 28.7039 7.38102 28.7437 7.67476 28.6642C7.72113 28.6509 7.75205 28.6068 7.77414 28.3572C7.84702 28.143 7.85365 27.2883 7.85365 23.7414V19.2117L8.05241 18.5866C8.18272 18.1781 8.50737 17.1025 8.77681 16.197L9.499 13.7897C10.6673 9.98219 11.7804 6.23873 11.8113 6.0245L11.8356 5.85003L11.8334 5.84782ZM29.1616 11.3427V11.579H29.124L29.1042 18.1008L29.0843 24.4238L28.5785 24.9384C28.0109 25.5148 27.5582 25.7357 27.1474 25.6319C26.6991 25.5192 26.7123 25.6937 26.6748 18.22L26.6394 11.3404H23.3841V11.5768H23.3465V19.0416C23.3465 27.0387 23.3465 27.0343 23.7529 27.836C24.0753 28.4765 24.5479 28.7879 25.3541 28.8939C26.4164 29.0352 27.5626 28.5538 28.6249 27.5202L29.0865 27.0718V27.847C29.0865 28.5162 29.1064 28.6266 29.2278 28.6598C29.4266 28.715 31.8913 28.7194 32.1563 28.6642L32.3772 28.6178V28.3881L32.4147 28.3815V11.2963L29.1638 11.3404L29.1616 11.3427ZM20.9061 14.7129C20.5969 13.39 20.0205 12.4999 19.0686 11.8859C17.5756 10.9208 15.8684 10.817 14.2871 11.5988C13.1342 12.1686 12.39 13.1139 12.0079 14.5009C11.9588 14.6676 11.9241 14.8383 11.9041 15.011C11.8069 15.5013 11.7959 16.2301 11.7694 19.6335C11.7296 24.8765 11.7915 25.4993 12.4474 26.6897C13.0923 27.8581 14.4284 28.715 15.8839 28.8917C16.3212 28.9447 17.209 28.8629 17.7214 28.7194C18.8809 28.3969 19.994 27.4804 20.4865 26.4402C20.7033 26.0237 20.8446 25.572 20.9039 25.1062C21.0474 24.3266 21.0585 23.0633 21.0585 19.8477C21.0585 15.7465 21.0452 15.2981 20.9083 14.7107L20.9061 14.7129ZM17.1935 25.4C16.8578 25.6194 16.449 25.6972 16.0561 25.6164C15.758 25.5524 15.3538 25.0841 15.2301 24.6579C15.0756 24.1256 15.0645 16.7204 15.197 15.2694C15.4179 14.5428 16.0318 14.1629 16.7032 14.344C17.2267 14.4854 17.4939 14.8123 17.6463 15.4991C17.7589 16.0093 17.7722 16.6431 17.7479 20.3733C17.7324 22.8469 17.7236 24.0572 17.6419 24.7065C17.5602 25.1151 17.4232 25.2255 17.1935 25.4022V25.4ZM79.3461 18.4342H80.9185L80.8943 17.0097C80.87 15.7023 80.8501 15.5543 80.6756 15.1987C80.3996 14.64 79.9932 14.3904 79.3483 14.3904C78.5731 14.3904 78.0828 14.7659 77.8509 15.5344C77.7515 15.8613 77.6477 18.1118 77.7228 18.3062C77.7648 18.4144 77.99 18.4342 79.3461 18.4342ZM68.8335 15.1943C68.7399 14.998 68.5893 14.8344 68.4014 14.7249C68.2135 14.6153 67.9969 14.565 67.78 14.5804C67.369 14.6118 66.9775 14.7682 66.6581 15.0287L66.3776 15.2429V25.4773L66.6581 25.6915C67.2941 26.1774 67.992 26.279 68.4735 25.9565C68.673 25.8157 68.818 25.6107 68.8843 25.3757C69.0101 25.0135 69.0212 24.5475 69.0057 20.2408C68.9881 15.7531 68.9792 15.4881 68.8335 15.1943Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M88.3348 10.5826C88.0212 6.82592 87.7716 5.60681 86.9986 4.04096C85.9717 1.96714 84.4897 0.87392 82.3784 0.63319C80.7463 0.447673 74.6021 0.184858 68.9196 0.0589712C59.0784 -0.159674 42.8986 0.262156 40.8315 0.789996C39.9089 1.01642 39.0705 1.50231 38.4153 2.19021C37.1101 3.48882 36.3305 5.35283 36.0191 7.93239C35.3057 13.8203 35.2902 20.9318 35.9771 27.034C36.273 29.6577 36.8826 31.3627 38.0266 32.7673C38.74 33.6441 39.9723 34.3884 41.0722 34.6115C41.8452 34.7683 45.7101 34.9847 51.3419 35.1857C52.1811 35.2166 54.4007 35.2674 56.2779 35.3005C60.187 35.369 67.3758 35.3293 71.4859 35.2144C74.251 35.1371 79.2909 34.9317 80.2339 34.8588C80.4989 34.839 81.1129 34.7992 81.5988 34.7727C83.2309 34.6799 84.2689 34.3398 85.2429 33.5735C86.5039 32.5818 87.4801 30.751 87.8931 28.6021C88.284 26.5702 88.5446 22.9504 88.5976 18.8403C88.6418 15.4061 88.5822 13.5553 88.3348 10.5782V10.5826ZM49.1466 9.22218L47.3179 9.24426L47.2384 28.7456L45.6527 28.7655C44.4269 28.7832 44.0537 28.7633 44.025 28.686C44.0029 28.6308 43.9786 24.2336 43.9676 18.9154L43.9477 9.24426L40.3765 9.20009V6.15231L50.9311 6.19428L50.9752 9.19788L49.1466 9.21997V9.22218ZM60.3593 20.3996V28.7854H57.4705V27.902C57.4705 27.2372 57.4463 27.0185 57.3667 27.0185C57.3093 27.0185 57.0487 27.2372 56.7859 27.5044C56.2139 28.0853 55.5381 28.5513 54.9594 28.7677C53.7624 29.216 52.6272 28.9532 52.1436 28.1206C51.6996 27.3587 51.693 27.1864 51.693 19.2754V12.0093H54.5796L54.6017 18.8514C54.6237 25.5742 54.626 25.6978 54.7872 25.9717C55.0014 26.3339 55.3261 26.4333 55.8429 26.2897C56.1476 26.2058 56.3552 26.0578 56.8477 25.5675L57.4705 24.9491V12.0093H60.3593V20.3951V20.3996ZM71.6273 27.5883C71.3733 28.1559 70.8057 28.7103 70.3397 28.8472C69.1272 29.205 68.1532 28.9135 67.0291 27.8556C66.6801 27.5265 66.3555 27.2615 66.3069 27.2615C66.2473 27.2615 66.2163 27.5177 66.2163 28.0234V28.7854H63.3276V6.15231H66.2163V9.84498C66.2163 11.8746 66.2428 13.5377 66.276 13.5377C66.3091 13.5377 66.6139 13.2682 66.954 12.9413C67.7358 12.1882 68.3873 11.857 69.2155 11.7951C70.693 11.6825 71.5742 12.4444 71.9762 14.1803C72.1021 14.7214 72.1131 15.3398 72.1131 20.3598C72.1131 26.473 72.1153 26.4995 71.6273 27.5883ZM83.8515 24.2314C83.8365 24.7702 83.7797 25.307 83.6814 25.837C83.2795 27.3255 82.2105 28.3812 80.6646 28.8141C78.5841 29.3971 76.2917 28.443 75.3773 26.6122C74.865 25.5852 74.8451 25.3798 74.8451 20.3598C74.8451 16.2674 74.8605 15.7639 74.9908 15.2051C75.3619 13.626 76.2806 12.6034 77.8376 12.0358C78.2882 11.8724 78.7586 11.7863 79.229 11.7774C80.9097 11.7421 82.5749 12.6454 83.2751 14.1163C83.7455 15.1079 83.8051 15.5342 83.8515 18.3302L83.8934 20.8391L77.7338 20.881L77.7118 22.5661C77.6786 24.9447 77.8399 25.6757 78.4825 26.1064C79.0214 26.4708 79.8518 26.4421 80.3024 26.0468C80.7264 25.6758 80.8457 25.276 80.8876 24.1099L80.9252 23.0873H83.9001L83.8515 24.2314Z"
+                    fill="currentColor"
+                  /></svg></a
+              ><a
+                class="feedback-socials__link medium"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg
+                  width="149"
+                  height="44"
+                  viewBox="0 0 149 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.6689 0.153106C4.61891 1.48299 1.26645 5.23529 0.207551 9.94883C-1.13366 15.919 4.44666 18.4445 4.90473 17.6175C5.44337 16.6447 3.9048 16.3159 3.58803 13.2179C3.17872 9.21673 4.96574 4.746 7.21492 2.7843C7.63241 2.41962 7.61285 2.92714 7.61285 3.86529C7.61285 5.54314 7.5238 20.6058 7.5238 23.7494C7.5238 28.0028 7.35506 29.3461 7.05172 30.6735C6.74488 32.0183 6.2509 32.9273 6.62489 33.2774C7.04296 33.6688 8.82794 32.7373 9.86115 31.2364C11.1002 29.436 11.534 27.2735 11.612 24.9258C11.706 22.0952 11.7019 17.6036 11.706 15.0416C11.7095 12.6922 11.7439 5.81209 11.6663 1.67597C11.6473 0.660929 8.94443 -0.403342 7.6689 0.153106ZM115.966 20.0597C115.867 22.2712 115.397 23.9995 114.813 25.2188C113.683 27.5792 111.339 28.3119 110.343 24.9191C109.801 23.0696 109.776 19.9807 110.165 17.3996C110.562 14.7706 111.671 12.7849 113.507 12.9639C115.317 13.141 116.165 15.5692 115.966 20.0597ZM85.4422 33.7797C85.4177 37.4539 84.8621 40.6753 83.6709 41.6113C81.9811 42.9382 79.7101 41.9426 80.1804 39.2615C80.5964 36.889 82.5644 34.4659 85.4472 31.5053C85.4472 31.5053 85.453 32.1806 85.4422 33.7797ZM84.9809 20.0381C84.8776 22.0524 84.376 24.0755 83.8286 25.2188C82.6987 27.5792 80.3375 28.3171 79.3588 24.9191C78.6897 22.5973 78.85 19.5929 79.1807 17.6996C79.6105 15.2431 80.6522 12.9642 82.5221 12.9642C84.3404 12.9642 85.2372 15.0407 84.9809 20.0381ZM67.299 20.0077C67.1881 22.1405 66.7884 23.9235 66.147 25.2188C64.9862 27.5631 62.6897 28.3064 61.6772 24.9191C60.9471 22.4766 61.1955 19.1465 61.4991 17.3474C61.9499 14.6776 63.0786 12.7849 64.8405 12.9642C66.6503 13.1483 67.5299 15.5695 67.299 20.0077ZM148.33 22.4991C147.888 22.4991 147.686 22.9738 147.519 23.7725C146.94 26.5514 146.331 27.1783 145.546 27.1783C144.668 27.1783 143.88 25.8029 143.677 23.0489C143.518 20.8833 143.544 16.8967 143.747 12.931C143.789 12.1163 143.573 11.31 141.473 10.5162C140.57 10.1746 139.257 9.67167 138.603 11.3146C136.756 15.9564 136.033 19.6415 135.863 21.138C135.854 21.2154 135.763 21.2316 135.747 21.0504C135.638 19.8515 135.396 17.6725 135.366 13.0951C135.36 12.202 135.178 11.4419 134.231 10.8195C133.617 10.4153 131.751 9.70115 131.079 10.5512C130.497 11.2459 129.823 13.1161 129.122 15.3334C128.553 17.1355 128.156 18.3542 128.156 18.3542C128.156 18.3542 128.164 13.4923 128.171 11.648C128.174 10.9523 127.715 10.7204 127.577 10.6785C126.955 10.4907 125.729 10.1768 125.209 10.1768C124.566 10.1768 124.409 10.55 124.409 11.0945C124.409 11.166 124.308 17.4957 124.308 21.9217C124.308 22.1141 124.308 22.3238 124.309 22.5468C123.954 24.5812 122.802 27.3424 121.55 27.3424C120.295 27.3424 119.704 26.1882 119.704 20.9115C119.704 17.8333 119.793 16.4946 119.836 14.2682C119.862 12.9857 119.911 12.0011 119.908 11.7777C119.898 11.0924 118.76 10.7469 118.23 10.6192C117.698 10.4907 117.236 10.4405 116.875 10.4621C116.363 10.4925 116.002 10.8411 116.002 11.3213C116.002 11.579 116.005 12.0683 116.005 12.0683C115.346 10.9912 114.287 10.2418 113.583 10.0245C111.685 9.43797 109.705 9.95764 108.212 12.1333C107.025 13.8616 106.309 15.8196 106.027 18.6323C105.821 20.6888 105.889 22.7739 106.255 24.5374C105.812 26.5274 104.992 27.3424 104.093 27.3424C102.788 27.3424 101.842 25.1258 101.952 21.2911C102.024 18.769 102.509 16.9991 103.039 14.4384C103.265 13.3468 103.081 12.7754 102.621 12.2278C102.198 11.7255 101.298 11.4687 100.005 11.7841C99.0835 12.0093 97.766 12.2515 96.5605 12.4375C96.5605 12.4375 96.6335 12.1351 96.693 11.6027C97.0066 8.8098 94.0909 9.03621 93.1605 9.92817C92.6055 10.4609 92.2274 11.0891 92.084 12.2184C91.8563 14.0108 93.2606 14.8563 93.2606 14.8563C92.8002 17.0517 91.6706 19.9193 90.5046 21.9928C89.8801 23.1036 89.4025 23.9269 88.7856 24.8018C88.7655 21.2906 88.7875 17.7792 88.8516 14.2685C88.877 12.986 88.9263 12.0275 88.9237 11.8039C88.9167 11.303 88.6355 11.1134 88.0508 10.8739C87.5334 10.6618 86.9221 10.5153 86.2877 10.4636C85.4871 10.3992 85.0049 10.8408 85.0177 11.3635C85.02 11.4623 85.02 12.0683 85.02 12.0683C84.3617 10.9912 83.3028 10.2418 82.5983 10.0245C80.7006 9.43797 78.7206 9.95764 77.227 12.1333C76.0403 13.8616 75.2631 16.2873 75.0427 18.611C74.8377 20.7763 74.8754 22.6164 75.1551 24.167C74.8535 25.7193 73.9858 27.3428 73.0051 27.3428C71.7509 27.3428 71.0374 26.1882 71.0374 20.9115C71.0374 17.8333 71.1262 16.4946 71.17 14.2682C71.1954 12.986 71.2441 12.0011 71.2415 11.7777C71.2321 11.0924 70.0938 10.7472 69.5639 10.6192C69.0098 10.4855 68.5313 10.4369 68.1637 10.4652C67.6791 10.5025 67.3381 10.9544 67.3381 11.2915V12.0683C66.6798 10.9912 65.6209 10.2418 64.9164 10.0245C63.0187 9.43797 61.0498 9.96615 59.5451 12.1333C58.5642 13.5461 57.7698 15.1125 57.361 18.58C57.2428 19.582 57.1905 20.5207 57.1975 21.3975C56.8063 23.8883 55.078 26.759 53.6647 26.759C52.8376 26.759 52.0496 25.0887 52.0496 21.5297C52.0496 16.7888 52.3316 10.0385 52.3795 9.38813C52.3795 9.38813 54.1654 9.35652 54.511 9.35227C55.4021 9.34193 56.2087 9.36412 57.3955 9.3006C57.9905 9.2693 58.5639 7.04564 57.9496 6.77061C57.6711 6.64601 55.7036 6.53721 54.9235 6.51989C54.2678 6.50469 52.442 6.36368 52.442 6.36368C52.442 6.36368 52.6058 1.88323 52.644 1.41005C52.6761 1.01528 52.1856 0.812273 51.9048 0.689192C51.221 0.388327 50.6094 0.243973 49.8845 0.0883745C48.8825 -0.126789 48.4283 0.0838159 48.3395 0.963617C48.2058 2.29927 48.1366 6.21142 48.1366 6.21142C47.4015 6.21142 44.8901 6.0619 44.155 6.0619C43.4718 6.0619 42.7344 9.12039 43.6791 9.15807C44.7658 9.20183 46.6596 9.24013 47.915 9.27903C47.915 9.27903 47.859 16.1406 47.859 18.2594C47.859 18.4843 47.8601 18.7016 47.8613 18.9122C47.1702 22.6608 44.7366 24.686 44.7366 24.686C45.2591 22.2059 44.1915 20.3432 42.2684 18.7666C41.5599 18.1858 40.1611 17.086 38.5963 15.8807C38.5963 15.8807 39.5025 14.9508 40.3065 13.0799C40.8758 11.7543 40.9006 10.2381 39.5025 9.90355C37.1926 9.35044 35.2882 11.1164 34.7201 13.0018C34.2798 14.4624 34.5145 15.5458 35.3769 16.6715C35.4397 16.7538 35.5083 16.838 35.5784 16.9225C35.0573 17.9685 34.3408 19.3771 33.7341 20.4694C32.0502 23.5023 30.7782 25.9007 29.8168 25.9007C29.0484 25.9007 29.0586 23.4652 29.0586 21.1851C29.0586 19.2194 29.1981 16.2639 29.3097 13.2045C29.3464 12.1926 28.8601 11.616 28.0455 11.0939C27.5504 10.7767 26.4938 10.1531 25.8819 10.1531C24.9657 10.1531 22.323 10.2828 19.8263 17.8014C19.5115 18.749 18.8932 20.4757 18.8932 20.4757L18.9466 11.4343C18.9466 11.2222 18.838 11.0174 18.5896 10.8773C18.1689 10.6393 17.0452 10.1531 16.0458 10.1531C15.5699 10.1531 15.332 10.3834 15.332 10.8429L15.245 24.9884C15.245 26.0633 15.2719 27.3172 15.374 27.8655C15.4756 28.4143 15.6406 28.8611 15.8444 29.1267C16.0484 29.392 16.284 29.5947 16.6726 29.6779C17.0343 29.7554 19.0149 30.0201 19.118 29.2324C19.2412 28.2879 19.2462 27.2668 20.2861 23.4576C21.9052 17.5273 24.016 14.6341 25.0087 13.6063C25.1824 13.427 25.3803 13.4161 25.3707 13.7099C25.3286 15.01 25.1794 18.2594 25.0793 21.0188C24.8104 28.4052 26.1011 29.7743 27.946 29.7743C29.3572 29.7743 31.3466 28.3146 33.479 24.6198C34.6672 22.5607 35.8498 20.4982 37.027 18.4323C37.6731 19.055 38.3986 19.7251 39.1232 20.4411C40.8078 22.1053 41.3607 23.6868 40.9938 25.1869C40.7135 26.3335 39.6563 27.5154 37.7753 26.3669C37.227 26.0317 36.9929 25.7725 36.4417 25.3947C36.1457 25.192 35.6934 25.1312 35.4222 25.344C34.718 25.8965 34.3151 26.5997 34.0851 27.4701C33.8614 28.3171 34.6763 28.7647 35.5212 29.1564C36.2484 29.4935 37.8118 29.7989 38.8085 29.8335C42.6929 29.9688 45.8048 27.8813 47.9711 22.4964C48.3588 27.147 50.0089 29.7785 52.8761 29.7785C54.793 29.7785 56.715 27.1993 57.5555 24.662C57.7966 25.6962 58.154 26.5958 58.6152 27.3564C60.8244 31.0002 65.1103 30.2162 67.2631 27.1218C67.9287 26.1657 68.03 25.8223 68.03 25.8223C68.3442 28.7437 70.6044 29.7646 71.8984 29.7646C73.3479 29.7646 74.8441 29.0513 75.8931 26.5933C76.016 26.8602 76.1503 27.1151 76.2969 27.3564C78.5061 31.0002 82.7922 30.2162 84.945 27.1218C85.0466 26.9765 85.1348 26.8453 85.2116 26.7267L85.2746 28.6459L83.2926 30.5383C79.9702 33.708 77.4466 36.1119 77.2609 38.9118C77.0244 42.4817 79.8044 43.8085 81.9105 43.9824C84.143 44.1669 86.0585 42.882 87.2339 41.0838C88.2686 39.5007 88.9459 36.094 88.896 32.7294C88.8764 31.3819 88.8434 29.6688 88.818 27.8323C89.9843 26.4225 91.2984 24.6404 92.5082 22.5551C93.8267 20.2822 95.2397 17.2298 95.9632 14.8541C95.9632 14.8541 97.1908 14.8654 98.5011 14.776C98.92 14.7475 99.0406 14.8368 98.963 15.1562C98.8695 15.5428 97.3076 21.8132 98.7332 25.9904C99.7086 28.8501 101.908 29.7697 103.212 29.7697C104.738 29.7697 106.198 28.5699 106.981 26.7884C107.075 26.9869 107.174 27.1789 107.281 27.3567C109.491 31.0005 113.762 30.2113 115.93 27.1218C116.419 26.4247 116.697 25.8223 116.697 25.8223C117.162 28.8462 119.421 29.7801 120.715 29.7801C122.062 29.7801 123.342 29.2048 124.379 26.6486C124.423 27.7743 124.491 28.6945 124.599 28.9844C124.664 29.1622 125.047 29.3847 125.326 29.4923C126.559 29.9682 127.816 29.7433 128.282 29.6454C128.604 29.5774 128.855 29.3081 128.89 28.6134C128.98 26.7884 128.925 23.7223 129.456 21.4434C130.348 17.6194 131.18 16.136 131.575 15.4018C131.796 14.99 132.045 14.9222 132.054 15.3577C132.073 16.239 132.115 18.8262 132.461 22.3028C132.715 24.8593 133.053 26.3706 133.314 26.8492C134.058 28.2168 134.976 28.2815 135.724 28.2815C136.2 28.2815 137.195 28.1448 137.106 27.2744C137.062 26.8501 137.138 24.228 138.018 20.4606C138.592 18.0001 139.55 15.7774 139.895 14.9645C140.023 14.6648 140.082 14.9009 140.08 14.9471C140.007 16.6414 139.844 22.1834 140.507 25.2145C141.406 29.3206 144.006 29.7801 144.912 29.7801C146.847 29.7801 148.429 28.2484 148.962 24.218C149.09 23.248 148.9 22.4991 148.33 22.4991Z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="feedback__main">
+            <div class="feedback-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-1.jpg"
+                          alt="feedback-preview-1"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-2.jpg"
+                          alt="feedback-preview-2"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button
+                    class="feedback-slider__item popup-open"
+                    data-popup="_popup-info-video"
+                  >
+                    <span class="feedback-slider__label"
+                      ><svg
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="100"
+                          cy="100"
+                          r="99"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M143.868 100.888C144.535 101.273 144.535 102.235 143.868 102.62L78.8158 140.178C78.1491 140.563 77.3158 140.082 77.3158 139.312L77.3158 64.196C77.3158 63.4262 78.1491 62.9451 78.8158 63.33L143.868 100.888L144.368 100.022L143.868 100.888Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        /></svg></span
+                    ><span class="feedback-slider__img"
+                      ><span class="feedback-slider__img__container"
+                        ><img
+                          src="assets/img/feedback/feedback-3.jpg"
+                          alt="feedback-preview-3"
+                          loading="lazy" /></span
+                    ></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-slider__bottom">
+              <div class="feedback-slider-controls">
+                <button class="feedback-slider-prev">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M34.9412 17.9705H1.00004M1.00004 17.9705L17.2918 34.2622M1.00004 17.9705L17.2918 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg></button
+                ><button class="feedback-slider-next">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 17.9705H34.9411M34.9411 17.9705L18.6494 34.2622M34.9411 17.9705L18.6494 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="feedback-slider-pagination"></div>
+            </div>
+          </div>
+          <div class="feedback-footer">
+            <!--.feedback-footer__textp.feedback-footer__title І це неймовірно нас мотивує
+p.feedback-footer__description Більше 12 000 українцям W8shipping привезли автомобіль “під ключ”, який вони успішно експлуатують, або вигідно продали.
+-->
+            <div class="feedback-footer__links">
+              <a
+                class="feedback-footer-link"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="feedback-footer-link__text"
+                  ><strong>YouTube</strong> - <br />Sumy Racing Team</span
+                ><span class="feedback-footer-link__label"
+                  ><img
+                    src="assets/img/feedback/arrow-link.svg"
+                    alt="link" /></span></a
+              ><a
+                class="feedback-footer-link"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="feedback-footer-link__text"
+                  ><strong>YouTube</strong> - <br />Джипы Монстры</span
+                ><span class="feedback-footer-link__label"
+                  ><img
+                    src="assets/img/feedback/arrow-link.svg"
+                    alt="link" /></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="types dark">
+      <div class="_container">
+        <div class="types__wrapper">
+          <button
+            class="button-filled types__button mobile popup-open"
+            data-popup="_popup-form"
+          >
+            <span>до наступного кроку</span>
+          </button>
+          <div class="types-slider resize-text-container swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">sedan</p>
+                  <div class="types-slider__img">
+                    <img src="assets/img/types-dark/car-1.png" alt="sedan" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">wagon</p>
+                  <div class="types-slider__img">
+                    <img src="assets/img/types-dark/car-2.png" alt="wagon" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">hatchback</p>
+                  <div class="types-slider__img">
+                    <img
+                      src="assets/img/types-dark/car-3.png"
+                      alt="hatchback"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="types-slider__item">
+                  <p class="types-slider__text">crossover</p>
+                  <div class="types-slider__img">
+                    <img
+                      src="assets/img/types-dark/car-4.png"
+                      alt="crossover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="types__main">
+            <h2 class="types__title">
+              <span>який</span><span>тип кузова</span><span>розглядаєте?</span>
+            </h2>
+            <ul class="types-list swipe-to-container">
+              <li>
+                <button class="types-list__button swipe-to-button active">
+                  Седан
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  універсал
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  хетчбек
+                </button>
+              </li>
+              <li>
+                <button class="types-list__button swipe-to-button">
+                  кросовер
+                </button>
+              </li>
+            </ul>
+            <button
+              class="button-empty types__button desktop popup-open"
+              data-popup="_popup-form"
+            >
+              <span>до наступного кроку</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog">
+      <div class="_container">
+        <div class="catalog__wrapper">
+          <div class="catalog__header">
+            <h2 class="catalog__title">Найвигідніші <br />авто</h2>
+            <p class="catalog__subtitle">
+              які ми привезли <br />своїм клієнтам <br />у 2023 році
+            </p>
+          </div>
+          <div class="catalog__main">
+            <div class="catalog-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="catalog-slider__item">
+                    <h3 class="catalog-slider__title">2017 ford fusion se</h3>
+                    <div class="catalog-slider__image">
+                      <img
+                        src="assets/img/catalog/catalog-1.jpg"
+                        alt="2017 ford fusion se"
+                        loading="lazy"
+                      />
+                    </div>
+                    <ul class="catalog-slider-list">
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто в США
+                        </p>
+                        <p class="catalog-slider-list__value">$17,192</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто під ключ
+                        </p>
+                        <p class="catalog-slider-list__value marked">$6,093</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість доставки в Україну
+                        </p>
+                        <p class="catalog-slider-list__value marked">$3,977</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">термін доставки</p>
+                        <p class="catalog-slider-list__value">1 місяць</p>
+                      </li>
+                    </ul>
+                    <a
+                      class="catalog-slider-list__more button-filled anchor"
+                      href="#"
+                      data-goto=".types.dark"
+                      ><span>Детальніше</span></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="catalog-slider__item">
+                    <h3 class="catalog-slider__title">2017 toyota camry le</h3>
+                    <div class="catalog-slider__image">
+                      <img
+                        src="assets/img/catalog/catalog-2.jpg"
+                        alt="2017 toyota camry le"
+                        loading="lazy"
+                      />
+                    </div>
+                    <ul class="catalog-slider-list">
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто в США
+                        </p>
+                        <p class="catalog-slider-list__value">$17,192</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто під ключ
+                        </p>
+                        <p class="catalog-slider-list__value marked">$6,093</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість доставки в Україну
+                        </p>
+                        <p class="catalog-slider-list__value marked">$3,977</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">термін доставки</p>
+                        <p class="catalog-slider-list__value">1 місяць</p>
+                      </li>
+                    </ul>
+                    <a
+                      class="catalog-slider-list__more button-filled anchor"
+                      href="#"
+                      data-goto=".types.dark"
+                      ><span>Детальніше</span></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="catalog-slider__item">
+                    <h3 class="catalog-slider__title">2013 ford fusion se</h3>
+                    <div class="catalog-slider__image">
+                      <img
+                        src="assets/img/catalog/catalog-3.jpg"
+                        alt="2013 ford fusion se"
+                        loading="lazy"
+                      />
+                    </div>
+                    <ul class="catalog-slider-list">
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто в США
+                        </p>
+                        <p class="catalog-slider-list__value">$17,192</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто під ключ
+                        </p>
+                        <p class="catalog-slider-list__value marked">$6,093</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість доставки в Україну
+                        </p>
+                        <p class="catalog-slider-list__value marked">$3,977</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">термін доставки</p>
+                        <p class="catalog-slider-list__value">1 місяць</p>
+                      </li>
+                    </ul>
+                    <a
+                      class="catalog-slider-list__more button-filled anchor"
+                      href="#"
+                      data-goto=".types.dark"
+                      ><span>Детальніше</span></a
+                    >
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="catalog-slider__item">
+                    <h3 class="catalog-slider__title">2013 ford fusion se</h3>
+                    <div class="catalog-slider__image">
+                      <img
+                        src="assets/img/catalog/catalog-4.jpg"
+                        alt="2013 ford fusion se"
+                        loading="lazy"
+                      />
+                    </div>
+                    <ul class="catalog-slider-list">
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто в США
+                        </p>
+                        <p class="catalog-slider-list__value">$17,192</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість авто під ключ
+                        </p>
+                        <p class="catalog-slider-list__value marked">$6,093</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">
+                          вартість доставки в Україну
+                        </p>
+                        <p class="catalog-slider-list__value marked">$3,977</p>
+                      </li>
+                      <li class="catalog-slider-list__item">
+                        <p class="catalog-slider-list__key">термін доставки</p>
+                        <p class="catalog-slider-list__value">1 місяць</p>
+                      </li>
+                    </ul>
+                    <a
+                      class="catalog-slider-list__more button-filled anchor"
+                      href="#"
+                      data-goto=".types.dark"
+                      ><span>Детальніше</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="catalog-slider__bottom">
+              <div class="catalog-slider-controls">
+                <button class="catalog-slider-prev">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M34.9412 17.9705H1.00004M1.00004 17.9705L17.2918 34.2622M1.00004 17.9705L17.2918 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg></button
+                ><button class="catalog-slider-next">
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 17.9705H34.9411M34.9411 17.9705L18.6494 34.2622M34.9411 17.9705L18.6494 1.67872"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="catalog-slider-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offer">
+      <div class="_container">
+        <div class="offer__wrapper">
+          <div class="offer__main">
+            <div class="offer__image mobile">
+              <img src="assets/img/offer/car-mobile.png" alt="car" />
+            </div>
+            <h2 class="offer__title">
+              <span>щоденні</span><span>пропозиції авто</span><span>з США</span>
+            </h2>
+            <div class="offer__additional">
+              <p class="offer__subtitle">отримуйте <br />вигідні пропозиції</p>
+              <p class="offer__description">
+                Публікуємо тільки актуальні автомобілі з розрахунком вартості в
+                Україні.
+              </p>
+              <div class="offer-socials">
+                <p class="offer-socials__title">Приєднуйтеся до нас!</p>
+                <ul class="offer-socials__list">
+                  <li>
+                    <a class="offer-socials__link" href="#">
+                      <svg
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19 0C8.512 0 0 8.512 0 19C0 29.488 8.512 38 19 38C29.488 38 38 29.488 38 19C38 8.512 29.488 0 19 0ZM27.816 12.92C27.531 15.922 26.296 23.218 25.669 26.581C25.403 28.006 24.871 28.481 24.377 28.538C23.275 28.633 22.439 27.816 21.375 27.113C19.703 26.011 18.753 25.327 17.138 24.263C15.257 23.028 16.473 22.344 17.556 21.242C17.841 20.957 22.705 16.53 22.8 16.131C22.8132 16.0706 22.8114 16.0078 22.7949 15.9482C22.7783 15.8886 22.7475 15.834 22.705 15.789C22.591 15.694 22.439 15.732 22.306 15.751C22.135 15.789 19.475 17.556 14.288 21.052C13.528 21.565 12.844 21.831 12.236 21.812C11.552 21.793 10.26 21.432 9.291 21.109C8.094 20.729 7.163 20.52 7.239 19.855C7.277 19.513 7.752 19.171 8.645 18.81C14.193 16.397 17.879 14.801 19.722 14.041C25.004 11.837 26.087 11.457 26.809 11.457C26.961 11.457 27.322 11.495 27.55 11.685C27.74 11.837 27.797 12.046 27.816 12.198C27.797 12.312 27.835 12.654 27.816 12.92Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="offer-socials__link" href="#">
+                      <svg
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M28.4025 0.979046C22.21 -0.326349 15.7882 -0.326349 9.59565 0.979046L8.9284 1.11826C7.18651 1.48552 5.58668 2.30097 4.30664 3.47403C3.02659 4.64708 2.11643 6.13181 1.67728 7.76329C0.107574 13.5963 0.107574 19.7067 1.67728 25.5397C2.09608 27.0956 2.94368 28.5195 4.13414 29.6669C5.32461 30.8143 6.81562 31.6445 8.45602 32.0733L9.37126 37.226C9.40048 37.3897 9.47568 37.5429 9.58902 37.6698C9.70237 37.7967 9.84972 37.8926 10.0157 37.9476C10.1817 38.0026 10.3603 38.0146 10.5329 37.9823C10.7055 37.9501 10.8658 37.8748 10.9971 37.7643L16.3724 33.2297C20.4076 33.4619 24.4573 33.1577 28.4025 32.3258L29.0717 32.1866C30.8136 31.8193 32.4134 31.0039 33.6935 29.8308C34.9735 28.6578 35.8837 27.173 36.3228 25.5415C37.8924 19.7085 37.8924 13.5982 36.3228 7.76515C35.8835 6.13343 34.9731 4.64854 33.6927 3.47546C32.4123 2.30238 30.812 1.48707 29.0698 1.12011L28.4025 0.979046ZM11.2569 7.61294C10.8911 7.56273 10.518 7.63217 10.1999 7.8097H10.1724C9.43425 8.21805 8.76897 8.7322 8.20211 9.33731C7.72972 9.85147 7.47385 10.3712 7.40693 10.8724C7.36756 11.1693 7.39512 11.47 7.48763 11.754L7.52305 11.7726C8.05449 13.2445 8.74732 14.6608 9.59368 15.9935C10.685 17.8654 12.028 19.5966 13.5893 21.1443L13.6365 21.2074L13.7113 21.2594L13.7566 21.3095L13.8117 21.3541C15.4586 22.8309 17.2987 24.1034 19.2874 25.1406C21.5608 26.3081 22.9405 26.8594 23.7692 27.0896V27.1007C24.0113 27.1712 24.2317 27.2028 24.4542 27.2028C25.1599 27.1536 25.8278 26.8831 26.3516 26.4343C26.9913 25.8998 27.5325 25.2705 27.9537 24.5708V24.5578C28.3494 23.8524 28.2155 23.1879 27.6447 22.7369C26.4982 21.7922 25.2584 20.9531 23.9424 20.2311C23.0606 19.78 22.165 20.0529 21.8029 20.5095L21.0294 21.4302C20.6318 21.8868 19.9114 21.8237 19.9114 21.8237L19.8917 21.8348C14.5163 20.5411 13.0815 15.4088 13.0815 15.4088C13.0815 15.4088 13.0145 14.7109 13.5125 14.3545L14.4809 13.6195C14.9454 13.2631 15.2682 12.4204 14.7702 11.5888C14.0097 10.3466 13.1217 9.17782 12.119 8.09926C11.9003 7.84542 11.5936 7.67254 11.2529 7.61109L11.2569 7.61294ZM20.3385 5.38185C20.0775 5.38185 19.8272 5.47962 19.6426 5.65367C19.458 5.82772 19.3544 6.06378 19.3544 6.30992C19.3544 6.55606 19.458 6.79212 19.6426 6.96617C19.8272 7.14022 20.0775 7.238 20.3385 7.238C22.8284 7.238 24.895 8.00459 26.5307 9.47467C27.3711 10.2784 28.0266 11.2306 28.4557 12.2737C28.8867 13.3188 29.0835 14.4343 29.0324 15.5517C29.0269 15.6736 29.047 15.7953 29.0915 15.9098C29.1359 16.0244 29.2038 16.1296 29.2914 16.2194C29.4682 16.4007 29.7142 16.5084 29.9752 16.5188C30.2362 16.5291 30.4908 16.4412 30.6832 16.2745C30.8755 16.1078 30.9897 15.8758 31.0006 15.6297C31.0617 14.2552 30.8197 12.8837 30.2901 11.6018C29.7581 10.3139 28.9516 9.14263 27.9203 8.16051L27.9006 8.14195C25.8713 6.31363 23.3027 5.38185 20.3385 5.38185ZM20.2716 8.43336C20.0106 8.43336 19.7602 8.53114 19.5757 8.70519C19.3911 8.87924 19.2874 9.1153 19.2874 9.36144C19.2874 9.60758 19.3911 9.84364 19.5757 10.0177C19.7602 10.1917 20.0106 10.2895 20.2716 10.2895H20.305C22.1001 10.4102 23.407 10.9744 24.3223 11.9007C25.2611 12.8547 25.7473 14.0408 25.7099 15.5072C25.7039 15.7533 25.8018 15.9916 25.9822 16.1697C26.1625 16.3477 26.4104 16.4509 26.6714 16.4566C26.9324 16.4623 27.1851 16.3699 27.3739 16.1999C27.5627 16.0298 27.6722 15.796 27.6782 15.5499C27.7254 13.625 27.068 11.9638 25.765 10.6385V10.6348C24.4325 9.28719 22.604 8.57443 20.4034 8.43522L20.37 8.43151L20.2716 8.43336ZM20.2342 11.5424C20.1025 11.5315 19.9698 11.5456 19.844 11.5841C19.7182 11.6226 19.602 11.6846 19.5022 11.7663C19.4024 11.8481 19.3211 11.948 19.2631 12.0601C19.2052 12.1722 19.1717 12.2941 19.1649 12.4186C19.158 12.5431 19.1778 12.6677 19.2231 12.7848C19.2684 12.902 19.3382 13.0093 19.4285 13.1004C19.5187 13.1915 19.6275 13.2646 19.7484 13.3152C19.8692 13.3657 19.9996 13.3929 20.1318 13.3949C20.9546 13.4357 21.4801 13.6696 21.8108 13.9833C22.1434 14.2988 22.3914 14.8055 22.4367 15.5981C22.4391 15.7227 22.4681 15.8455 22.522 15.9592C22.5758 16.073 22.6534 16.1753 22.7501 16.2602C22.8468 16.3451 22.9606 16.4107 23.0848 16.4532C23.209 16.4957 23.3409 16.5142 23.4728 16.5076C23.6047 16.501 23.7339 16.4694 23.8526 16.4148C23.9713 16.3601 24.0771 16.2835 24.1637 16.1894C24.2503 16.0954 24.3159 15.9858 24.3567 15.8673C24.3975 15.7488 24.4126 15.6238 24.401 15.4997C24.338 14.3861 23.968 13.4023 23.2102 12.6784C22.4485 11.9545 21.4112 11.6018 20.2342 11.5424Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="offer__image desktop">
+              <img src="assets/img/offer/car.png" alt="car" loading="lazy" />
+            </div>
+          </div>
+          <div class="offer-media">
+            <div class="offer-media__frame">
+              <img src="assets/img/offer/phone-frame.png" alt="frame" />
+            </div>
+            <div class="offer-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="offer-media__img">
+                    <img
+                      src="assets/img/offer/viber.png"
+                      alt="media"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="offer-media__img">
+                    <img
+                      src="assets/img/offer/telegram.png"
+                      alt="media"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="_container">
+        <div class="footer__wrapper">
+          <div class="footer__item">
+            <p class="footer__title">Соціальні <br />мережі</p>
+            <div class="footer__content">
+              <div class="footer__socials__container">
+                <p class="footer__socials__title">прямий зв'язок</p>
+                <ul class="socials footer__socials">
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.8842 7.3466C10.5953 7.30404 10.3007 7.3629 10.0494 7.51338H10.0277C9.44468 7.85953 8.91922 8.29536 8.4715 8.80829C8.09839 9.24412 7.8963 9.68467 7.84344 10.1095C7.81235 10.3612 7.83411 10.6161 7.90718 10.8569L7.93516 10.8726C8.3549 12.1203 8.90212 13.3208 9.5706 14.4505C10.4325 16.0372 11.4933 17.5048 12.7264 18.8167L12.7637 18.8702L12.8228 18.9142L12.8586 18.9567L12.9021 18.9945C14.2029 20.2463 15.6563 21.325 17.227 22.2042C19.0226 23.1939 20.1123 23.6612 20.7668 23.8563V23.8657C20.958 23.9255 21.1321 23.9522 21.3078 23.9522C21.8652 23.9106 22.3928 23.6812 22.8065 23.3009C23.3117 22.8477 23.7392 22.3143 24.0719 21.7212V21.7102C24.3844 21.1123 24.2787 20.549 23.8278 20.1667C22.9223 19.3658 21.9431 18.6546 20.9036 18.0426C20.2072 17.6602 19.4998 17.8915 19.2138 18.2786L18.6028 19.059C18.2888 19.446 17.7198 19.3925 17.7198 19.3925L17.7043 19.402C13.4587 18.3053 12.3253 13.9549 12.3253 13.9549C12.3253 13.9549 12.2725 13.3633 12.6658 13.0612L13.4307 12.4381C13.7976 12.136 14.0525 11.4217 13.6592 10.7168C13.0585 9.66384 12.3571 8.67309 11.5651 7.75883C11.3924 7.54366 11.1502 7.39712 10.8811 7.34503L10.8842 7.3466ZM18.0587 5.45537C17.8526 5.45537 17.6548 5.53826 17.5091 5.68579C17.3633 5.83333 17.2814 6.03343 17.2814 6.24207C17.2814 6.45072 17.3633 6.65082 17.5091 6.79835C17.6548 6.94589 17.8526 7.02877 18.0587 7.02877C20.0237 7.02877 21.656 7.67859 22.9479 8.92472C23.6117 9.606 24.1294 10.4132 24.4683 11.2974C24.8088 12.1832 24.9642 13.1288 24.9238 14.076C24.9152 14.2847 24.9887 14.4883 25.1284 14.642C25.268 14.7957 25.4623 14.887 25.6685 14.8958C25.8746 14.9045 26.0758 14.83 26.2277 14.6887C26.3796 14.5474 26.4698 14.3508 26.4784 14.1421C26.5266 12.977 26.3355 11.8144 25.9172 10.7278C25.4971 9.63611 24.86 8.64327 24.0455 7.81075L24.0299 7.79502C22.4271 6.24522 20.3999 5.45537 18.0587 5.45537Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M18.0043 8.04204C17.7981 8.04204 17.6004 8.12493 17.4547 8.27246C17.3089 8.42 17.227 8.6201 17.227 8.82874C17.227 9.03739 17.3089 9.23749 17.4547 9.38502C17.6004 9.53256 17.7981 9.61544 18.0043 9.61544H18.0307C19.4485 9.71771 20.4808 10.196 21.2037 10.9812C21.9452 11.7899 22.3292 12.7953 22.2997 14.0383C22.2949 14.2469 22.3723 14.4489 22.5147 14.5998C22.6571 14.7508 22.8529 14.8383 23.0591 14.8431C23.2652 14.8479 23.4648 14.7696 23.6139 14.6254C23.7631 14.4813 23.8495 14.2831 23.8543 14.0745C23.8916 12.4428 23.3723 11.0346 22.3432 9.91124V9.90809C21.2907 8.76581 19.8465 8.16162 18.1085 8.04362L18.082 8.04047L18.0043 8.04204Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M17.9748 10.6775C17.8707 10.6682 17.7659 10.6802 17.6666 10.7128C17.5673 10.7454 17.4754 10.798 17.3966 10.8673C17.3178 10.9366 17.2536 11.0213 17.2078 11.1163C17.162 11.2113 17.1356 11.3147 17.1302 11.4202C17.1248 11.5258 17.1404 11.6313 17.1762 11.7306C17.2119 11.8299 17.2671 11.9209 17.3384 11.9981C17.4097 12.0754 17.4956 12.1373 17.5911 12.1802C17.6865 12.2231 17.7895 12.246 17.8939 12.2477C18.5437 12.2824 18.9588 12.4806 19.22 12.7465C19.4827 13.014 19.6786 13.4435 19.7144 14.1154C19.7163 14.2209 19.7392 14.325 19.7817 14.4215C19.8243 14.5179 19.8856 14.6046 19.9619 14.6766C20.0383 14.7485 20.1282 14.8042 20.2263 14.8402C20.3243 14.8762 20.4286 14.8919 20.5327 14.8863C20.6369 14.8807 20.7389 14.854 20.8327 14.8076C20.9264 14.7613 21.01 14.6963 21.0784 14.6166C21.1468 14.5368 21.1987 14.444 21.2309 14.3436C21.2631 14.2431 21.275 14.1372 21.2658 14.032C21.2161 13.0879 20.9238 12.254 20.3253 11.6404C19.7237 11.0268 18.9044 10.7278 17.9748 10.6775Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.48821 1.33936C14.435 0.220212 19.565 0.220212 24.5118 1.33936L25.0389 1.45737C26.4849 1.78456 27.8131 2.51112 28.8757 3.55632C29.9383 4.60152 30.6938 5.92443 31.0583 7.37807C32.3139 12.386 32.3139 17.6321 31.0583 22.64C30.6938 24.0937 29.9383 25.4166 28.8757 26.4618C27.8131 27.507 26.4849 28.2335 25.0389 28.5607L24.5103 28.6787C21.412 29.38 18.2328 29.6442 15.063 29.4639L10.9386 33.1991C10.7832 33.34 10.5931 33.4361 10.3885 33.4773C10.1838 33.5185 9.97189 33.5034 9.77495 33.4335C9.57801 33.3635 9.40322 33.2414 9.26883 33.0798C9.13445 32.9182 9.04538 32.723 9.01094 32.5147L8.32848 28.3892C7.01979 27.9771 5.8374 27.2322 4.89432 26.2256C3.95124 25.2191 3.27898 23.9845 2.94179 22.64C1.68607 17.6321 1.68607 12.386 2.94179 7.37807C3.30622 5.92443 4.06172 4.60152 5.12435 3.55632C6.18697 2.51112 7.51511 1.78456 8.9612 1.45737L9.48821 1.33936ZM24.0035 3.64125C19.3914 2.59778 14.6086 2.59778 9.99656 3.64125L9.468 3.76082C8.44308 3.99315 7.50184 4.50843 6.74881 5.24947C5.99577 5.9905 5.46041 6.92827 5.20218 7.95865C4.042 12.5856 4.042 17.4325 5.20218 22.0594C5.46054 23.09 5.99613 24.0279 6.74946 24.769C7.50278 25.51 8.44435 26.0252 9.46955 26.2573L9.60946 26.2887C9.8358 26.34 10.0419 26.4584 10.2014 26.6288C10.3609 26.7992 10.4666 27.0139 10.5049 27.2454L10.962 30.0114L13.8722 27.376C13.9884 27.2704 14.1244 27.1896 14.272 27.1382C14.4197 27.0868 14.5761 27.066 14.7319 27.077C17.8396 27.3001 20.9629 27.0643 24.0035 26.3769L24.5305 26.2573C25.5557 26.0252 26.4973 25.51 27.2506 24.769C28.0039 24.0279 28.5395 23.09 28.7979 22.0594C29.9576 17.4337 29.9576 12.586 28.7979 7.95865C28.5395 6.92807 28.0039 5.99016 27.2506 5.24911C26.4973 4.50806 25.5557 3.99289 24.5305 3.76082L24.0035 3.64125Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="17"
+                          cy="17"
+                          r="15"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M23.1366 10.0001C23.267 9.99755 23.5553 10.03 23.7432 10.1816C23.868 10.2893 23.9476 10.4397 23.9662 10.6029C23.9871 10.7235 24.0132 10.9996 23.9923 11.2148C23.7575 13.6753 22.7374 19.6436 22.2182 22.3984C21.9991 23.5651 21.5673 23.9553 21.1486 23.9929C20.2407 24.0771 19.5506 23.3966 18.6701 22.8236C17.2925 21.9252 16.5138 21.3665 15.1767 20.4902C13.6309 19.479 14.6327 18.9216 15.5132 18.0141C15.7441 17.7756 19.7489 14.1549 19.8271 13.8269C19.8363 13.7855 19.8454 13.6325 19.7541 13.5521C19.6628 13.4717 19.5271 13.499 19.4293 13.521C19.291 13.5521 17.0903 14.9988 12.8273 17.8573C12.2012 18.2851 11.6363 18.4925 11.1289 18.4795C10.5706 18.4692 9.49567 18.1671 8.69603 17.9091C7.71506 17.5915 6.93629 17.4243 7.00412 16.8863C7.03934 16.6063 7.42807 16.3198 8.16902 16.0268C12.7321 14.0512 15.7741 12.7484 17.2978 12.1197C21.6443 10.3229 22.5483 10.0105 23.1366 10.0001Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.2224 28.561C11.1664 28.145 12.2224 28.0666 13.2112 28.3386C14.4432 28.6746 15.7152 28.8442 17 28.841C24.336 28.841 29.8 23.5816 29.8 16.5206C29.8 9.45951 24.336 4.20012 17 4.20012C9.664 4.20012 4.2 9.45951 4.2 16.5206C4.2 20.1527 5.6336 23.356 8.1456 25.6025C8.60201 26.0068 8.9711 26.5 9.23026 27.0519C9.48942 27.6038 9.6332 28.2028 9.6528 28.8122L10.2224 28.561ZM17 1C26.0128 1 33 7.60344 33 16.5206C33 25.4377 26.0128 32.0411 17 32.0411C15.4354 32.0452 13.8774 31.8385 12.368 31.4267C12.0845 31.3488 11.7828 31.3708 11.5136 31.4891L8.3376 32.8908C8.14581 32.9755 7.93613 33.0119 7.727 32.9966C7.51787 32.9813 7.31569 32.9149 7.13824 32.8032C6.96079 32.6915 6.8135 32.5379 6.70933 32.3559C6.60515 32.1739 6.54728 31.9691 6.5408 31.7595L6.4544 28.9114C6.44843 28.7381 6.40719 28.5679 6.33318 28.411C6.25918 28.2542 6.15398 28.1142 6.024 27.9994C2.912 25.2153 1 21.1863 1 16.5206C1 7.60344 7.9856 1 17 1ZM7.392 21.0599L12.0912 13.6037C12.268 13.3229 12.5011 13.0819 12.7757 12.8958C13.0504 12.7097 13.3606 12.5826 13.6869 12.5225C14.0131 12.4623 14.3483 12.4705 14.6713 12.5464C14.9942 12.6223 15.2979 12.7644 15.5632 12.9636L19.3008 15.7637C19.4674 15.8895 19.6705 15.9575 19.8792 15.9575C20.0879 15.9575 20.291 15.8895 20.4576 15.7637L25.5056 11.93C26.1792 11.4196 27.0592 12.226 26.608 12.9428L21.9072 20.3991C21.7304 20.6794 21.4974 20.92 21.2231 21.1057C20.9487 21.2915 20.6388 21.4185 20.3129 21.4786C19.9871 21.5387 19.6523 21.5307 19.3297 21.4551C19.007 21.3795 18.7036 21.2378 18.4384 21.0391L14.6992 18.239C14.5326 18.1133 14.3295 18.0452 14.1208 18.0452C13.9121 18.0452 13.709 18.1133 13.5424 18.239L8.4944 22.0712C7.8208 22.5816 6.9408 21.7768 7.392 21.0599Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__socials__container">
+                <p class="footer__socials__title">Пабліки</p>
+                <ul class="socials footer__socials">
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 1C8.17867 1 1 8.17867 1 17C1 25.8213 8.17867 33 17 33C25.8213 33 33 25.8213 33 17C33 8.17867 25.8213 1 17 1ZM17 3.66667C24.38 3.66667 30.3333 9.62 30.3333 17C30.3366 20.192 29.192 23.2787 27.1085 25.6968C25.0249 28.1149 22.1414 29.7033 18.984 30.172V20.888H22.7813L23.3773 17.0307H18.984V14.924C18.984 13.324 19.5107 11.9013 21.008 11.9013H23.4147V8.536C22.992 8.47867 22.0973 8.35467 20.4067 8.35467C16.876 8.35467 14.8067 10.2187 14.8067 14.4667V17.0307H11.1773V20.888H14.8067V30.1387C11.693 29.6262 8.86298 28.0233 6.82226 25.6165C4.78153 23.2096 3.66305 20.1556 3.66667 17C3.66667 9.62 9.62 3.66667 17 3.66667Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 3.5C13.3364 3.5 12.8758 3.51688 11.4363 3.581C9.99688 3.6485 9.01644 3.87462 8.1575 4.20875C7.25653 4.54763 6.44045 5.07921 5.76631 5.76631C5.07963 6.4408 4.54812 7.25678 4.20875 8.1575C3.87462 9.01475 3.64681 9.99687 3.581 11.4312C3.51688 12.8741 3.5 13.3331 3.5 17.0017C3.5 20.6669 3.51688 21.1259 3.581 22.5654C3.6485 24.0031 3.87462 24.9836 4.20875 25.8425C4.55469 26.7301 5.01538 27.4827 5.76631 28.2337C6.51556 28.9846 7.26819 29.447 8.15581 29.7912C9.01644 30.1254 9.99519 30.3532 11.4329 30.419C12.8741 30.4831 13.3331 30.5 17 30.5C20.6669 30.5 21.1243 30.4831 22.5654 30.419C24.0014 30.3515 24.9853 30.1254 25.8442 29.7912C26.7446 29.4522 27.5601 28.9206 28.2337 28.2337C28.9846 27.4827 29.4453 26.7301 29.7912 25.8425C30.1237 24.9836 30.3515 24.0031 30.419 22.5654C30.4831 21.1259 30.5 20.6669 30.5 17C30.5 13.3331 30.4831 12.8741 30.419 11.4329C30.3515 9.99688 30.1237 9.01475 29.7912 8.1575C29.4519 7.25676 28.9204 6.44077 28.2337 5.76631C27.5598 5.07895 26.7436 4.54734 25.8425 4.20875C24.9819 3.87462 23.9997 3.64681 22.5637 3.581C21.1226 3.51688 20.6653 3.5 16.9966 3.5H17.0017H17ZM15.7901 5.93338H17.0017C20.6062 5.93338 21.0331 5.94519 22.4557 6.011C23.7719 6.07006 24.4874 6.29113 24.9633 6.47506C25.5927 6.71975 26.0433 7.01337 26.5158 7.48587C26.9883 7.95837 27.2803 8.40725 27.5249 9.03838C27.7106 9.51256 27.9299 10.2281 27.989 11.5443C28.0548 12.9669 28.0683 13.3938 28.0683 16.9966C28.0683 20.5994 28.0548 21.0281 27.989 22.4506C27.9299 23.7669 27.7089 24.4807 27.5249 24.9566C27.3085 25.5427 26.963 26.0727 26.5141 26.5074C26.0416 26.9799 25.5928 27.2718 24.9616 27.5165C24.4891 27.7021 23.7736 27.9215 22.4557 27.9823C21.0331 28.0464 20.6062 28.0616 17.0017 28.0616C13.3972 28.0616 12.9686 28.0464 11.546 27.9823C10.2298 27.9215 9.51594 27.7021 9.04006 27.5165C8.45365 27.3004 7.92315 26.9555 7.48756 26.5074C7.03827 26.0721 6.69228 25.5415 6.47506 24.9549C6.29113 24.4807 6.07006 23.7652 6.011 22.4489C5.94688 21.0264 5.93338 20.5994 5.93338 16.9932C5.93338 13.3887 5.94688 12.9635 6.011 11.5409C6.07175 10.2247 6.29113 9.50919 6.47675 9.03331C6.72144 8.40388 7.01506 7.95331 7.48756 7.48081C7.96006 7.00831 8.40894 6.71638 9.04006 6.47169C9.51594 6.28606 10.2298 6.06669 11.546 6.00594C12.7914 5.94856 13.274 5.93169 15.7901 5.93V5.93338ZM24.2073 8.17437C23.9946 8.17437 23.7839 8.21628 23.5874 8.29769C23.3908 8.3791 23.2122 8.49843 23.0618 8.64886C22.9114 8.79929 22.792 8.97788 22.7106 9.17443C22.6292 9.37098 22.5873 9.58163 22.5873 9.79438C22.5873 10.0071 22.6292 10.2178 22.7106 10.4143C22.792 10.6109 22.9114 10.7895 23.0618 10.9399C23.2122 11.0903 23.3908 11.2096 23.5874 11.2911C23.7839 11.3725 23.9946 11.4144 24.2073 11.4144C24.637 11.4144 25.049 11.2437 25.3528 10.9399C25.6566 10.6361 25.8273 10.224 25.8273 9.79438C25.8273 9.36472 25.6566 8.95267 25.3528 8.64886C25.049 8.34505 24.637 8.17437 24.2073 8.17437ZM17.0017 10.0677C16.0821 10.0534 15.1689 10.2221 14.3152 10.5641C13.4614 10.9061 12.6842 11.4145 12.0289 12.0597C11.3735 12.7049 10.8531 13.4741 10.4978 14.3224C10.1425 15.1707 9.95958 16.0812 9.95958 17.0008C9.95958 17.9205 10.1425 18.831 10.4978 19.6793C10.8531 20.5276 11.3735 21.2968 12.0289 21.942C12.6842 22.5872 13.4614 23.0956 14.3152 23.4376C15.1689 23.7796 16.0821 23.9483 17.0017 23.9339C18.8217 23.9055 20.5576 23.1626 21.8346 21.8655C23.1117 20.5684 23.8275 18.8211 23.8275 17.0008C23.8275 15.1806 23.1117 13.4333 21.8346 12.1362C20.5576 10.8391 18.8217 10.0961 17.0017 10.0677ZM17.0017 12.4994C18.1953 12.4994 19.34 12.9736 20.1841 13.8176C21.0281 14.6616 21.5023 15.8064 21.5023 17C21.5023 18.1936 21.0281 19.3384 20.1841 20.1824C19.34 21.0264 18.1953 21.5006 17.0017 21.5006C15.8081 21.5006 14.6633 21.0264 13.8193 20.1824C12.9753 19.3384 12.5011 18.1936 12.5011 17C12.5011 15.8064 12.9753 14.6616 13.8193 13.8176C14.6633 12.9736 15.8081 12.4994 17.0017 12.4994Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="17"
+                          cy="17"
+                          r="15"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M21.44 10.82C20.7564 10.0396 20.3797 9.03743 20.38 8H17.29V20.4C17.2662 21.071 16.9829 21.7066 16.4998 22.1729C16.0167 22.6393 15.3714 22.8999 14.7 22.9C13.28 22.9 12.1 21.74 12.1 20.3C12.1 18.58 13.76 17.29 15.47 17.82V14.66C12.02 14.2 9 16.88 9 20.3C9 23.63 11.76 26 14.69 26C17.83 26 20.38 23.45 20.38 20.3V14.01C21.633 14.9099 23.1374 15.3926 24.68 15.39V12.3C24.68 12.3 22.8 12.39 21.44 10.82Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="socials__link"
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <svg
+                        width="34"
+                        height="34"
+                        viewBox="0 0 34 34"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.0303 0.5H12.1212L10.8485 5.24375L9.57576 0.5H7.45455C7.87879 1.7375 8.30303 2.76875 8.72727 4.00625C9.36364 5.65625 9.78788 7.1 9.78788 7.925V12.875H11.697V7.925L14.0303 0.5ZM19.1212 9.78125V6.6875C19.1212 5.65625 18.9091 5.0375 18.4848 4.41875C18.0606 3.8 17.4242 3.59375 16.5758 3.59375C15.7273 3.59375 15.0909 4.00625 14.6667 4.625C14.2424 5.0375 14.0303 5.65625 14.0303 6.6875V9.9875C14.0303 11.0187 14.2424 11.6375 14.6667 12.05C15.0909 12.6687 15.7273 12.875 16.5758 12.875C17.4242 12.875 18.0606 12.4625 18.4848 11.8438C18.9091 11.6375 19.1212 10.8125 19.1212 9.78125ZM17.4242 10.1937C17.4242 11.0187 17.2121 11.4313 16.5758 11.4313C15.9394 11.4313 15.7273 11.0187 15.7273 10.1937V6.275C15.7273 5.45 15.9394 5.0375 16.5758 5.0375C17.2121 5.0375 17.4242 5.45 17.4242 6.275V10.1937ZM25.4848 12.875V3.59375H23.7879V10.6063C23.3636 11.225 23.1515 11.4313 22.7273 11.4313C22.5152 11.4313 22.303 11.225 22.303 11.0187V3.59375H20.6061V10.8125C20.6061 11.4313 20.6061 11.8437 20.8182 12.2562C20.8182 12.6687 21.2424 12.875 21.8788 12.875C22.5152 12.875 23.1515 12.4625 23.7879 11.8438V12.875H25.4848ZM26.3333 22.1562C25.697 22.1562 25.4848 22.5688 25.4848 23.3938V24.2188H27.1818V23.3938C27.1818 22.5688 26.9697 22.1562 26.3333 22.1562ZM20.1818 22.1562C19.9697 22.1562 19.5455 22.3625 19.3333 22.5687V28.1375C19.5455 28.3437 19.9697 28.55 20.1818 28.55C20.6061 28.55 20.8182 28.1375 20.8182 27.3125V23.3938C20.8182 22.5688 20.6061 22.1562 20.1818 22.1562Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M30.5758 17.6188C30.1515 16.175 28.8788 14.9375 27.6061 14.9375C24.2121 14.525 20.6061 14.525 17 14.525C13.3939 14.525 10 14.525 6.39394 14.9375C5.12121 14.9375 3.84848 16.175 3.42424 17.6188C3 19.6813 3 21.95 3 24.0125C3 26.075 3 28.3438 3.42424 30.4062C3.84848 31.85 4.90909 32.8813 6.39394 33.0875C10 33.5 13.3939 33.5 17 33.5C20.6061 33.5 24 33.5 27.6061 33.0875C29.0909 32.8813 30.3636 31.85 30.5758 30.4062C31 28.3438 31 26.075 31 24.0125C31 21.95 31 19.6813 30.5758 17.6188ZM11.0606 19.475H8.93939V29.9938H7.0303V19.475H5.12121V17.6188H11.0606V19.475ZM16.1515 29.9938H14.4545V28.9625C13.8182 29.7875 13.1818 29.9938 12.5455 29.9938C11.9091 29.9938 11.697 29.7875 11.4848 29.375C11.4848 29.1687 11.2727 28.7563 11.2727 27.9313V20.7125H12.9697V27.9313C12.9697 28.1375 13.1818 28.3438 13.3939 28.3438C13.8182 28.3438 14.0303 28.1375 14.4545 27.5188V20.7125H16.1515V29.9938ZM22.5152 27.1062C22.5152 27.9312 22.5152 28.55 22.303 28.9625C22.0909 29.5813 21.6667 29.9938 21.0303 29.9938C20.3939 29.9938 19.7576 29.5813 19.3333 28.9625V29.7875H17.6364V17.6188H19.3333V21.5375C19.9697 20.9187 20.3939 20.5062 21.0303 20.5062C21.6667 20.5062 22.0909 20.9187 22.303 21.5375C22.5152 21.95 22.5152 22.5688 22.5152 23.3938V27.1062ZM28.8788 25.6625H25.4848V27.3125C25.4848 28.1375 25.697 28.55 26.3333 28.55C26.7576 28.55 26.9697 28.3438 27.1818 27.9313V26.9H28.8788V28.1375C28.8788 28.55 28.6667 28.7562 28.4545 29.1687C28.0303 29.7875 27.3939 30.2 26.3333 30.2C25.4848 30.2 24.8485 29.7875 24.2121 29.1687C23.7879 28.7562 23.5758 27.9312 23.5758 27.1062V24.0125C23.5758 22.9812 23.7879 22.3625 24 21.95C24.4242 21.3312 25.0606 20.9187 26.1212 20.9187C26.9697 20.9187 27.6061 21.3312 28.0303 21.95C28.4545 22.3625 28.4545 23.1875 28.4545 24.0125V25.6625H28.8788Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">контакти</p>
+            <div class="footer__content footer-contact">
+              <a class="footer-contact__link medium" href="tel:+380674448820"
+                >+380 (67) 444 88 20</a
+              ><a class="footer-contact__link" href="mailto:info@w8shipping.ua"
+                >info@w8shipping.ua</a
+              >
+            </div>
+          </div>
+          <div class="footer__item">
+            <ul class="footer-accordion accordion">
+              <li class="accordion__item">
+                <button class="accordion__summary">
+                  <span class="footer-accordion__text"
+                    ><span class="accordion__title">київ</span></span
+                  ><span class="accordion__label"></span>
+                </button>
+                <div class="accordion__details">
+                  <div class="accordion__description">
+                    <div class="footer-accordion-info">
+                      <div class="footer-accordion-info__col">
+                        <p class="footer-accordion-info__item">
+                          вул. Жилянська, 68
+                        </p>
+                        <a
+                          class="footer-accordion-adress"
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <span class="footer-accordion-adress__text"
+                            >Побудувати маршрут</span
+                          ><span class="footer-accordion-adress__label"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 14L14 1M14 1V13.48M14 1H1.52"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              /></svg></span
+                        ></a>
+                      </div>
+                      <div class="footer-accordion-info__col">
+                        <a
+                          class="footer-accordion-info__item"
+                          href="tel:+38 067 40 08 847"
+                          >+38 067 40 08 847</a
+                        ><a
+                          class="footer-accordion-info__item"
+                          href="mailto:info@w8shipping.ua"
+                          >info@w8shipping.ua</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <button class="accordion__summary">
+                  <span class="footer-accordion__text"
+                    ><span class="accordion__title">Дніпро</span></span
+                  ><span class="accordion__label"></span>
+                </button>
+                <div class="accordion__details">
+                  <div class="accordion__description">
+                    <div class="footer-accordion-info">
+                      <div class="footer-accordion-info__col">
+                        <p class="footer-accordion-info__item">
+                          вул. Козакова, 2-Д
+                        </p>
+                        <a
+                          class="footer-accordion-adress"
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <span class="footer-accordion-adress__text"
+                            >Побудувати маршрут</span
+                          ><span class="footer-accordion-adress__label"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 14L14 1M14 1V13.48M14 1H1.52"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              /></svg></span
+                        ></a>
+                      </div>
+                      <div class="footer-accordion-info__col">
+                        <a
+                          class="footer-accordion-info__item"
+                          href="tel:+38 067 40 08 875"
+                          >+38 067 40 08 875</a
+                        ><a
+                          class="footer-accordion-info__item"
+                          href="mailto:info@w8shipping.ua"
+                          >info@w8shipping.ua</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <button class="accordion__summary">
+                  <span class="footer-accordion__text"
+                    ><span class="accordion__title">Одеса</span></span
+                  ><span class="accordion__label"></span>
+                </button>
+                <div class="accordion__details">
+                  <div class="accordion__description">
+                    <div class="footer-accordion-info">
+                      <div class="footer-accordion-info__col">
+                        <p class="footer-accordion-info__item">
+                          вул. Академіка Філат..
+                        </p>
+                        <a
+                          class="footer-accordion-adress"
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <span class="footer-accordion-adress__text"
+                            >Побудувати маршрут</span
+                          ><span class="footer-accordion-adress__label"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 14L14 1M14 1V13.48M14 1H1.52"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              /></svg></span
+                        ></a>
+                      </div>
+                      <div class="footer-accordion-info__col">
+                        <a
+                          class="footer-accordion-info__item"
+                          href="tel:+38 067 40 08 531"
+                          >+38 067 40 08 531</a
+                        ><a
+                          class="footer-accordion-info__item"
+                          href="mailto:info@w8shipping.ua"
+                          >info@w8shipping.ua</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <button class="accordion__summary">
+                  <span class="footer-accordion__text"
+                    ><span class="footer-accordion__additional"
+                      >[дистанційно]</span
+                    ><span class="accordion__title">Харків</span></span
+                  ><span class="accordion__label"></span>
+                </button>
+                <div class="accordion__details">
+                  <div class="accordion__description">
+                    <div class="footer-accordion-info">
+                      <div class="footer-accordion-info__col">
+                        <p class="footer-accordion-info__item">
+                          Гімназійна набережн..
+                        </p>
+                        <a
+                          class="footer-accordion-adress"
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <span class="footer-accordion-adress__text"
+                            >Побудувати маршрут</span
+                          ><span class="footer-accordion-adress__label"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 14L14 1M14 1V13.48M14 1H1.52"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              /></svg></span
+                        ></a>
+                      </div>
+                      <div class="footer-accordion-info__col">
+                        <a
+                          class="footer-accordion-info__item"
+                          href="tel:+38 067 44 48 827"
+                          >+38 067 44 48 827</a
+                        ><a
+                          class="footer-accordion-info__item"
+                          href="mailto:info@w8shipping.ua"
+                          >info@w8shipping.ua</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion__item">
+                <button class="accordion__summary">
+                  <span class="footer-accordion__text"
+                    ><span class="accordion__title">Львів</span></span
+                  ><span class="accordion__label"></span>
+                </button>
+                <div class="accordion__details">
+                  <div class="accordion__description">
+                    <div class="footer-accordion-info">
+                      <div class="footer-accordion-info__col">
+                        <p class="footer-accordion-info__item">
+                          вул. Андрія Сахаров...
+                        </p>
+                        <a
+                          class="footer-accordion-adress"
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <span class="footer-accordion-adress__text"
+                            >Побудувати маршрут</span
+                          ><span class="footer-accordion-adress__label"
+                            ><svg
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 14L14 1M14 1V13.48M14 1H1.52"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              /></svg></span
+                        ></a>
+                      </div>
+                      <div class="footer-accordion-info__col">
+                        <a
+                          class="footer-accordion-info__item"
+                          href="tel:+38 067 44 48 812"
+                          >+38 067 44 48 812</a
+                        ><a
+                          class="footer-accordion-info__item"
+                          href="mailto:info@w8shipping.ua"
+                          >info@w8shipping.ua</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vevet@2.17.0/build/cdn/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
