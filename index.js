@@ -833,7 +833,7 @@ vevet.pageLoad.onLoaded(function () {
         if (buttonArray.length === 0 || slideArray.length === 0) {
             return;
         }
-        inputRequieredHandler(slider.el, buttonArray);
+        //inputRequieredHandler(slider.el, buttonArray);
         buttonArray.forEach(function (button) {
             button.addEventListener('click', function () {
                 buttonActionHandler(button, slider, slideArray, inputFormArray);
@@ -868,7 +868,7 @@ vevet.pageLoad.onLoaded(function () {
         }
         inputTelArray.forEach(function (input) {
             var options = {
-                mask: '+{38} (00) 000 00 00'
+                mask: '+{38\\0} (00) 000 00 00'
             };
             var mask = IMask(input, options);
             maskArray.push(mask);

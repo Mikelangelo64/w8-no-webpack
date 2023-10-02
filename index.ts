@@ -1151,7 +1151,7 @@ vevet.pageLoad.onLoaded(() => {
       return;
     }
 
-    inputRequieredHandler(slider.el, buttonArray);
+    //inputRequieredHandler(slider.el, buttonArray);
 
     buttonArray.forEach((button) => {
       button.addEventListener('click', () => {
@@ -1198,7 +1198,7 @@ vevet.pageLoad.onLoaded(() => {
 
     inputTelArray.forEach((input) => {
       const options = {
-        mask: '+{38} (00) 000 00 00',
+        mask: '+{38\\0} (00) 000 00 00',
       };
 
       const mask = IMask(input, options);
