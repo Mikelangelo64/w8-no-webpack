@@ -276,10 +276,10 @@ vevet.pageLoad.onLoaded(() => {
         config: {
           effect: 'fade',
           allowTouchMove: false,
-          autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-          },
+          // autoplay: {
+          //   delay: 2000,
+          //   disableOnInteraction: false,
+          // },
         },
       });
 
@@ -1075,20 +1075,41 @@ vevet.pageLoad.onLoaded(() => {
         return;
       }
 
-      input.addEventListener('change', () => {
+      let typingTimer: NodeJS.Timeout;
+      let interval = 1000;
+
+      const doneTyping = () => {
+        // console.log('done');
+
         const isAnyInputEmpty = !!Array.from(inputArray).find(
           (item) => item.value === ''
         );
 
+        const isTelInputEmpty = !!Array.from(inputArray).find(
+          (item) => item.type === 'tel' && item.value.length < 19
+        );
+
+        // console.log(isTelInputEmpty);
+
         buttonArray.forEach((button) => {
           if (button.dataset.action === 'submit') {
-            if (isAnyInputEmpty) {
+            if (isAnyInputEmpty || isTelInputEmpty) {
               button.classList.add('locked');
             } else {
               button.classList.remove('locked');
             }
           }
         });
+      };
+
+      input.addEventListener('keyup', () => {
+        clearTimeout(typingTimer);
+
+        typingTimer = setTimeout(doneTyping, interval);
+      });
+
+      input.addEventListener('keydown', () => {
+        clearTimeout(typingTimer);
       });
     });
   };
@@ -1151,7 +1172,7 @@ vevet.pageLoad.onLoaded(() => {
       return;
     }
 
-    //inputRequieredHandler(slider.el, buttonArray);
+    inputRequieredHandler(slider.el, buttonArray);
 
     buttonArray.forEach((button) => {
       button.addEventListener('click', () => {

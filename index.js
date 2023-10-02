@@ -169,11 +169,7 @@ vevet.pageLoad.onLoaded(function () {
                 className: 'types',
                 config: {
                     effect: 'fade',
-                    allowTouchMove: false,
-                    autoplay: {
-                        delay: 2000,
-                        disableOnInteraction: false
-                    }
+                    allowTouchMove: false
                 }
             });
             if (!slider) {
@@ -780,11 +776,16 @@ vevet.pageLoad.onLoaded(function () {
             if (input.type === 'radio') {
                 return;
             }
-            input.addEventListener('change', function () {
+            var typingTimer;
+            var interval = 1000;
+            var doneTyping = function () {
+                // console.log('done');
                 var isAnyInputEmpty = !!Array.from(inputArray).find(function (item) { return item.value === ''; });
+                var isTelInputEmpty = !!Array.from(inputArray).find(function (item) { return item.type === 'tel' && item.value.length < 19; });
+                // console.log(isTelInputEmpty);
                 buttonArray.forEach(function (button) {
                     if (button.dataset.action === 'submit') {
-                        if (isAnyInputEmpty) {
+                        if (isAnyInputEmpty || isTelInputEmpty) {
                             button.classList.add('locked');
                         }
                         else {
@@ -792,6 +793,13 @@ vevet.pageLoad.onLoaded(function () {
                         }
                     }
                 });
+            };
+            input.addEventListener('keyup', function () {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(doneTyping, interval);
+            });
+            input.addEventListener('keydown', function () {
+                clearTimeout(typingTimer);
             });
         });
     };
@@ -833,7 +841,7 @@ vevet.pageLoad.onLoaded(function () {
         if (buttonArray.length === 0 || slideArray.length === 0) {
             return;
         }
-        //inputRequieredHandler(slider.el, buttonArray);
+        inputRequieredHandler(slider.el, buttonArray);
         buttonArray.forEach(function (button) {
             button.addEventListener('click', function () {
                 buttonActionHandler(button, slider, slideArray, inputFormArray);

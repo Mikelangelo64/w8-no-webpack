@@ -1199,6 +1199,13 @@ html:not(.v-mobile) .socials__link:focus-visible {
   }
 }
 
+.form-short-popup > * + * {
+  margin-top: 2.625rem;
+}
+.form-short-popup__form {
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .desktop-hide {
     display: none !important;
@@ -1383,15 +1390,16 @@ form p > * + * {
 form > div {
   width: 100%;
   display: grid;
-  gap: 2.125rem 2.625rem;
 }
 @media (min-width: 900px) {
   form > div {
+    gap: 2.125rem 2.625rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 899px) {
   form > div {
+    gap: 1.25rem 2.125rem;
     grid-template-columns: 1fr;
   }
 }
@@ -1879,7 +1887,7 @@ html:not(.v-mobile) .popup__close:focus-visible svg {
     display: none !important;
   }
 }
-.popup.popup-form {
+.popup.form__popup {
   display: flex;
   opacity: 0;
 }
@@ -1887,7 +1895,7 @@ html:not(.v-mobile) .popup__close:focus-visible svg {
   --wrapper-width: 100%;
 }
 .popup__overlay {
-  background-color: rgba(var(--color-black--rgb), 0.88);
+  background-color: rgba(var(--color-black-100--rgb), 0.66);
 }
 @media (max-width: 899px) {
   .popup.fullscreen-phone .popup__overlay {
@@ -1924,11 +1932,20 @@ html:not(.v-mobile) .popup__close:focus-visible svg {
   background-color: transparent;
 }
 
+.popup.error__popup .popup__wrapper {
+  border: 1px solid var(--color-black);
+  border-radius: 0.625rem;
+}
 @media (min-width: 900px) {
   .popup.error__popup .popup__wrapper {
     max-width: 25rem;
     padding: 2.5rem 2rem;
   }
+}
+
+.popup.popup-form-short .popup__wrapper {
+  border: 1px solid var(--color-black);
+  border-radius: 0.625rem;
 }
 
 .popup.popup-menu .popup__wrapper {
@@ -1967,6 +1984,19 @@ html:not(.v-mobile) .popup__close:focus-visible svg {
 
 @media (max-width: 899px) {
   .popup.fullscreen-phone .popup__close {
+    top: 0.625rem;
+    right: 0.625rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .popup.fullscreen .popup__close {
+    top: 1.25rem;
+    right: 1.875rem;
+  }
+}
+@media (max-width: 899px) {
+  .popup.fullscreen .popup__close {
     top: 0.625rem;
     right: 0.625rem;
   }
