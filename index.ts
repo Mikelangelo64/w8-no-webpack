@@ -227,6 +227,55 @@ vevet.pageLoad.onLoaded(() => {
     });
   };
 
+  const swipeToHandler = (slider: Swiper, container: HTMLElement) => {
+    const paginationContainerArray = container.querySelectorAll<HTMLElement>(
+      '.swipe-to-container'
+    );
+
+    if (paginationContainerArray.length === 0) {
+      return;
+    }
+
+    paginationContainerArray.forEach((paginationContainer) => {
+      const buttonArray =
+        paginationContainer.querySelectorAll<HTMLButtonElement>(
+          '.swipe-to-button'
+        );
+
+      if (buttonArray.length === 0) {
+        return;
+      }
+
+      buttonArray.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          if (slider.slides.length < index + 1) {
+            slider.slideTo(0);
+          } else {
+            slider.slideTo(index);
+          }
+
+          buttonArray.forEach((otherButton) => {
+            otherButton.classList.remove('active');
+          });
+
+          button.classList.add('active');
+        });
+      });
+
+      slider.on('slideChange', (swiper) => {
+        buttonArray.forEach((button, index) => {
+          // findActivePicture(slider);
+
+          if (swiper.activeIndex === index) {
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+          }
+        });
+      });
+    });
+  };
+
   const sliderActionFormInit = (sliders: Array<IInitializedSlider>) => {
     const containerArray = document.querySelectorAll(
       '.action-popup'
@@ -287,13 +336,13 @@ vevet.pageLoad.onLoaded(() => {
         return;
       }
 
-      // swipeToHandler(slider, item);
+      swipeToHandler(slider, item);
       typeSliders.push({ slider, item });
       sliders.push({ name: `types-${sliderIndex}`, slider });
     });
 
     // console.log(typeSliders);
-    swipeToAllHandler(typeSliders);
+    //swipeToAllHandler(typeSliders);
     // swipeToHandler(typeSliders, item);
   };
 
@@ -601,7 +650,8 @@ vevet.pageLoad.onLoaded(() => {
     scroll: HTMLElement | null,
     overlay: HTMLElement | null,
     additional: HTMLElement | null,
-    video?: HTMLVideoElement | null
+    video?: HTMLVideoElement | null,
+    iframe?: HTMLIFrameElement | null
   ) => {
     if (!parent || !scroll || !overlay) {
       return undefined;
@@ -620,6 +670,16 @@ vevet.pageLoad.onLoaded(() => {
 
         if (video) {
           video.play();
+        }
+
+        if (iframe && iframe.contentWindow) {
+          const vidFunc = 'playVideo';
+          // console.dir(iframe.contentWindow.postMessage);
+
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"' + vidFunc + '","args":""}',
+            '*'
+          );
         }
       }
     });
@@ -643,6 +703,15 @@ vevet.pageLoad.onLoaded(() => {
 
         if (video) {
           video.pause();
+        }
+
+        if (iframe && iframe.contentWindow) {
+          // console.log(iframe, iframe.contentWindow);
+          const vidFunc = 'pauseVideo';
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"' + vidFunc + '","args":""}',
+            '*'
+          );
         }
       }
     });
@@ -705,6 +774,16 @@ vevet.pageLoad.onLoaded(() => {
 
     private _video: HTMLVideoElement | null;
 
+    set iframe(newValue: HTMLIFrameElement | null) {
+      this._iframe = newValue;
+    }
+
+    get iframe() {
+      return this._iframe;
+    }
+
+    private _iframe: HTMLIFrameElement | null;
+
     get timeline() {
       return this._timeline;
     }
@@ -734,6 +813,7 @@ vevet.pageLoad.onLoaded(() => {
       this._wrapper = this._parent.querySelector('.popup__wrapper');
       this._additional = this._parent.querySelector('.popup__additional');
       this._video = this._parent.querySelector('.video');
+      this._iframe = this._parent.querySelector('iframe, eframe');
 
       if (!this._name || !this._scroll || !this._overlay || !this._wrapper) {
         return;
@@ -746,7 +826,8 @@ vevet.pageLoad.onLoaded(() => {
         this._scroll,
         this._overlay,
         this._additional,
-        this._video
+        this._video,
+        this._iframe
       );
 
       this._openButtons = Array.from(
@@ -766,6 +847,18 @@ vevet.pageLoad.onLoaded(() => {
 
           button.addEventListener('click', () => {
             this._timeline?.reverse();
+
+            document.querySelector('html')?.classList.remove('lock');
+            document.querySelector('body')?.classList.remove('lock');
+
+            this._video?.pause();
+
+            if (this._iframe && this._iframe.contentWindow) {
+              this._iframe.contentWindow.postMessage(
+                '{"event":"command","func":"stopVideo","args":""}',
+                '*'
+              );
+            }
           });
         });
       }
@@ -777,6 +870,13 @@ vevet.pageLoad.onLoaded(() => {
           document.querySelector('body')?.classList.remove('lock');
 
           this._video?.pause();
+
+          if (this._iframe && this._iframe.contentWindow) {
+            this._iframe.contentWindow.postMessage(
+              '{"event":"command","func":"stopVideo","args":""}',
+              '*'
+            );
+          }
         }
       });
 
@@ -788,6 +888,13 @@ vevet.pageLoad.onLoaded(() => {
           document.querySelector('body')?.classList.remove('lock');
 
           this._video?.pause();
+
+          if (this._iframe && this._iframe.contentWindow) {
+            this._iframe.contentWindow.postMessage(
+              '{"event":"command","func":"stopVideo","args":""}',
+              '*'
+            );
+          }
         }
       });
     }
@@ -960,7 +1067,8 @@ vevet.pageLoad.onLoaded(() => {
   const popupOpenHandler = (
     typeValue: IResult,
     popups: Popup[],
-    inputProp: HTMLInputElement
+    inputProp: HTMLInputElement,
+    sliderIndex: number
   ) => {
     const input = inputProp;
 
@@ -984,10 +1092,12 @@ vevet.pageLoad.onLoaded(() => {
 
       openButtons.forEach((button) => {
         button.addEventListener('click', () => {
-          input.value = typeValue.text;
+          if (button.dataset.type && sliderIndex === +button.dataset.type) {
+            input.value = typeValue.text;
 
-          popupImage.src = typeValue.imageSrc;
-          popupText.innerHTML = typeValue.text;
+            popupImage.src = typeValue.imageSrc;
+            popupText.innerHTML = typeValue.text;
+          }
         });
       });
     });
@@ -1031,7 +1141,8 @@ vevet.pageLoad.onLoaded(() => {
   const chooseTypeInfo = (
     form: HTMLElement,
     slider: Swiper,
-    popups: Popup[]
+    popups: Popup[],
+    sliderIndex: number
   ) => {
     const inputType =
       form.querySelector<HTMLInputElement>('input[name="type"]');
@@ -1057,7 +1168,7 @@ vevet.pageLoad.onLoaded(() => {
       typeValue.text = newValue.text;
     });
 
-    popupOpenHandler(typeValue, popups, inputType);
+    popupOpenHandler(typeValue, popups, inputType, sliderIndex);
   };
 
   const inputRequieredHandler = (
@@ -1191,10 +1302,10 @@ vevet.pageLoad.onLoaded(() => {
     }
 
     formArray.forEach((form, index) => {
-      sliders.forEach(({ name, slider }) => {
-        if (name === `types-${index}` && slider) {
-          // if (name.includes('types') && slider) {
-          chooseTypeInfo(form, slider, popups);
+      sliders.forEach(({ name, slider }, sliderIndex) => {
+        //if (name === `types-${index}` && slider) {
+        if (name.includes('types') && slider) {
+          chooseTypeInfo(form, slider, popups, sliderIndex);
         }
 
         if (name === `action-popup-${index}` && slider) {

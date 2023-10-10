@@ -137,6 +137,43 @@ vevet.pageLoad.onLoaded(function () {
             });
         });
     };
+    var swipeToHandler = function (slider, container) {
+        var paginationContainerArray = container.querySelectorAll('.swipe-to-container');
+        if (paginationContainerArray.length === 0) {
+            return;
+        }
+        paginationContainerArray.forEach(function (paginationContainer) {
+            var buttonArray = paginationContainer.querySelectorAll('.swipe-to-button');
+            if (buttonArray.length === 0) {
+                return;
+            }
+            buttonArray.forEach(function (button, index) {
+                button.addEventListener('click', function () {
+                    if (slider.slides.length < index + 1) {
+                        slider.slideTo(0);
+                    }
+                    else {
+                        slider.slideTo(index);
+                    }
+                    buttonArray.forEach(function (otherButton) {
+                        otherButton.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                });
+            });
+            slider.on('slideChange', function (swiper) {
+                buttonArray.forEach(function (button, index) {
+                    // findActivePicture(slider);
+                    if (swiper.activeIndex === index) {
+                        button.classList.add('active');
+                    }
+                    else {
+                        button.classList.remove('active');
+                    }
+                });
+            });
+        });
+    };
     var sliderActionFormInit = function (sliders) {
         var containerArray = document.querySelectorAll('.action-popup');
         if (containerArray.length === 0) {
@@ -175,12 +212,12 @@ vevet.pageLoad.onLoaded(function () {
             if (!slider) {
                 return;
             }
-            // swipeToHandler(slider, item);
+            swipeToHandler(slider, item);
             typeSliders.push({ slider: slider, item: item });
             sliders.push({ name: "types-".concat(sliderIndex), slider: slider });
         });
         // console.log(typeSliders);
-        swipeToAllHandler(typeSliders);
+        //swipeToAllHandler(typeSliders);
         // swipeToHandler(typeSliders, item);
     };
     var sliderFeedbackInit = function (sliders) {
@@ -403,7 +440,7 @@ vevet.pageLoad.onLoaded(function () {
             }
         }
     };
-    var makeTimeline = function (parent, scroll, overlay, additional, video) {
+    var makeTimeline = function (parent, scroll, overlay, additional, video, iframe) {
         if (!parent || !scroll || !overlay) {
             return undefined;
         }
@@ -419,6 +456,11 @@ vevet.pageLoad.onLoaded(function () {
                 parent.classList.add('_opened');
                 if (video) {
                     video.play();
+                }
+                if (iframe && iframe.contentWindow) {
+                    var vidFunc = 'playVideo';
+                    // console.dir(iframe.contentWindow.postMessage);
+                    iframe.contentWindow.postMessage('{"event":"command","func":"' + vidFunc + '","args":""}', '*');
                 }
             }
         });
@@ -442,6 +484,11 @@ vevet.pageLoad.onLoaded(function () {
                 if (video) {
                     video.pause();
                 }
+                if (iframe && iframe.contentWindow) {
+                    // console.log(iframe, iframe.contentWindow);
+                    var vidFunc = 'pauseVideo';
+                    iframe.contentWindow.postMessage('{"event":"command","func":"' + vidFunc + '","args":""}', '*');
+                }
             }
         });
         return timeline;
@@ -461,12 +508,13 @@ vevet.pageLoad.onLoaded(function () {
             this._wrapper = this._parent.querySelector('.popup__wrapper');
             this._additional = this._parent.querySelector('.popup__additional');
             this._video = this._parent.querySelector('.video');
+            this._iframe = this._parent.querySelector('iframe, eframe');
             if (!this._name || !this._scroll || !this._overlay || !this._wrapper) {
                 return;
             }
             this._isThanks = this._name === '_popup-thanks';
             this._isError = this._name === '_popup-error';
-            this._timeline = makeTimeline(this._parent, this._scroll, this._overlay, this._additional, this._video);
+            this._timeline = makeTimeline(this._parent, this._scroll, this._overlay, this._additional, this._video, this._iframe);
             this._openButtons = Array.from(document.querySelectorAll("[data-popup=\"".concat(this._name, "\"]")));
             this._closeButtons = Array.from(this._parent.querySelectorAll('.popup__close, .popup__button'));
             if (this._closeButtons.length !== 0) {
@@ -475,8 +523,14 @@ vevet.pageLoad.onLoaded(function () {
                         return;
                     }
                     button.addEventListener('click', function () {
-                        var _a;
+                        var _a, _b, _c, _d;
                         (_a = _this._timeline) === null || _a === void 0 ? void 0 : _a.reverse();
+                        (_b = document.querySelector('html')) === null || _b === void 0 ? void 0 : _b.classList.remove('lock');
+                        (_c = document.querySelector('body')) === null || _c === void 0 ? void 0 : _c.classList.remove('lock');
+                        (_d = _this._video) === null || _d === void 0 ? void 0 : _d.pause();
+                        if (_this._iframe && _this._iframe.contentWindow) {
+                            _this._iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+                        }
                     });
                 });
             }
@@ -487,6 +541,9 @@ vevet.pageLoad.onLoaded(function () {
                     (_b = document.querySelector('html')) === null || _b === void 0 ? void 0 : _b.classList.remove('lock');
                     (_c = document.querySelector('body')) === null || _c === void 0 ? void 0 : _c.classList.remove('lock');
                     (_d = _this._video) === null || _d === void 0 ? void 0 : _d.pause();
+                    if (_this._iframe && _this._iframe.contentWindow) {
+                        _this._iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+                    }
                 }
             });
             useOnEscape(function () {
@@ -496,6 +553,9 @@ vevet.pageLoad.onLoaded(function () {
                     (_b = document.querySelector('html')) === null || _b === void 0 ? void 0 : _b.classList.remove('lock');
                     (_c = document.querySelector('body')) === null || _c === void 0 ? void 0 : _c.classList.remove('lock');
                     (_d = _this._video) === null || _d === void 0 ? void 0 : _d.pause();
+                    if (_this._iframe && _this._iframe.contentWindow) {
+                        _this._iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+                    }
                 }
             });
         }
@@ -558,6 +618,16 @@ vevet.pageLoad.onLoaded(function () {
         Object.defineProperty(Popup.prototype, "video", {
             get: function () {
                 return this._video;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        Object.defineProperty(Popup.prototype, "iframe", {
+            get: function () {
+                return this._iframe;
+            },
+            set: function (newValue) {
+                this._iframe = newValue;
             },
             enumerable: false,
             configurable: true
@@ -702,7 +772,7 @@ vevet.pageLoad.onLoaded(function () {
     };
     anchorsInit(0, popups);
     scrollBannerHandler(0);
-    var popupOpenHandler = function (typeValue, popups, inputProp) {
+    var popupOpenHandler = function (typeValue, popups, inputProp, sliderIndex) {
         var input = inputProp;
         popups.forEach(function (popup) {
             if (popup.name !== '_popup-form') {
@@ -716,9 +786,11 @@ vevet.pageLoad.onLoaded(function () {
             }
             openButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
-                    input.value = typeValue.text;
-                    popupImage.src = typeValue.imageSrc;
-                    popupText.innerHTML = typeValue.text;
+                    if (button.dataset.type && sliderIndex === +button.dataset.type) {
+                        input.value = typeValue.text;
+                        popupImage.src = typeValue.imageSrc;
+                        popupText.innerHTML = typeValue.text;
+                    }
                 });
             });
         });
@@ -748,7 +820,7 @@ vevet.pageLoad.onLoaded(function () {
         }
         return result;
     };
-    var chooseTypeInfo = function (form, slider, popups) {
+    var chooseTypeInfo = function (form, slider, popups, sliderIndex) {
         var inputType = form.querySelector('input[name="type"]');
         if (!inputType) {
             return;
@@ -765,7 +837,7 @@ vevet.pageLoad.onLoaded(function () {
             typeValue.imageSrc = newValue.imageSrc;
             typeValue.text = newValue.text;
         });
-        popupOpenHandler(typeValue, popups, inputType);
+        popupOpenHandler(typeValue, popups, inputType, sliderIndex);
     };
     var inputRequieredHandler = function (container, buttonArray) {
         var inputArray = container.querySelectorAll('input');
@@ -854,11 +926,11 @@ vevet.pageLoad.onLoaded(function () {
             return;
         }
         formArray.forEach(function (form, index) {
-            sliders.forEach(function (_a) {
+            sliders.forEach(function (_a, sliderIndex) {
                 var name = _a.name, slider = _a.slider;
-                if (name === "types-".concat(index) && slider) {
-                    // if (name.includes('types') && slider) {
-                    chooseTypeInfo(form, slider, popups);
+                //if (name === `types-${index}` && slider) {
+                if (name.includes('types') && slider) {
+                    chooseTypeInfo(form, slider, popups, sliderIndex);
                 }
                 if (name === "action-popup-".concat(index) && slider) {
                     initFormControl(form, slider);
